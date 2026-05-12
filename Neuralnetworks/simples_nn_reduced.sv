@@ -2,8 +2,8 @@ module small_network #(
     parameter int WIDTH = 32,
     parameter int FRAC  = 16,
     parameter int L1_INPUTS  = 2,
-    parameter int L1_NEURONS = 100,
-    parameter int L2_INPUTS  = 100,
+    parameter int L1_NEURONS = 4,
+    parameter int L2_INPUTS  = 4,
     parameter int L2_NEURONS = 1
 )(
     input  logic clk,
