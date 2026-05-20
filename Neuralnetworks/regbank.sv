@@ -1,37 +1,75 @@
 module weight_bank #(
     parameter int WIDTH = 32,
-    parameter int N_LAYERS = 3,
-    parameter int LAYER_SIZES [0:N_LAYERS-1] = '{2,100,1},
     parameter int MAX_SIZE = 2097152
 )(
     input  logic clk,
     input  logic we,
-    input  logic [20:0] addr,
+
+    input  logic [31:0] addr,
     input  logic signed [WIDTH-1:0] data_in,
 
     output logic signed [WIDTH-1:0] data_out
 );
 
+    // ============================================================
+    // MEMORY
+    // ============================================================
+
     logic signed [WIDTH-1:0] mem [0:MAX_SIZE-1];
 
-    // decode addr
-    logic [3:0] layer;
+    // ============================================================
+    // ADDRESS FORMAT
+    // ============================================================
+    //
+    // [31:24] -> layer
+    // [23]    -> is_bias
+    // [22]    -> is_lstm
+    // [21:20] -> gate
+    // [19:10] -> neuron
+    // [9]     -> recurrent
+    // [8:0]   -> idx
+    //
+    // gate:
+    // 00 -> forget
+    // 01 -> input
+    // 10 -> candidate
+    // 11 -> output
+    //
+    // recurrent:
+    // 0 -> Wx
+    // 1 -> Wh
+    //
+    // ============================================================
+
+    logic [7:0] layer;
     logic       is_bias;
-    logic [7:0] neuron;
-    logic [7:0] idx;
+    logic       is_lstm;
+    logic [1:0] gate;
+    logic [9:0] neuron;
+    logic       recurrent;
+    logic [8:0] idx;
 
-    assign layer   = addr[20:17];
-    assign is_bias = addr[16];
-    assign neuron  = addr[15:8];
-    assign idx     = addr[7:0]
+    assign layer      = addr[31:24];
+    assign is_bias    = addr[23];
+    assign is_lstm    = addr[22];
+    assign gate       = addr[21:20];
+    assign neuron     = addr[19:10];
+    assign recurrent  = addr[9];
+    assign idx        = addr[8:0];
 
-    // escrita
+    // ============================================================
+    // WRITE
+    // ============================================================
+
     always_ff @(posedge clk) begin
         if (we)
             mem[addr] <= data_in;
     end
 
-    // leitura
+    // ============================================================
+    // READ
+    // ============================================================
+
     assign data_out = mem[addr];
 
 endmodule
