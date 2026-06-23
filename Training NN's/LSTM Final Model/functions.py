@@ -147,7 +147,7 @@ def export_lstm_core(lstm_layer, mem, layer_idx, direction=0):
     
     # Para cada porta
     #gates = ['forget', 'input', 'candidate', 'output']
-    gates = ['candidate', 'forget', 'input', 'output']
+    gates = ['input', 'forget', 'candidate', 'output']
     
     for gate_idx, gate_name in enumerate(gates):
         # Pesos de entrada (Wx)
