@@ -1,6 +1,6 @@
 module sigmoid #(
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] z,
     output logic signed [WIDTH-1:0] y
@@ -9,11 +9,11 @@ module sigmoid #(
     logic signed [2*WIDTH-1:0] mult;
     logic signed [WIDTH-1:0] z2, z3, z5, z7, z9;
 
-    localparam signed [WIDTH-1:0] HALF   = 32'sd32768;
-    localparam signed [WIDTH-1:0] ONE    = 32'sd65536;
+    localparam signed [WIDTH-1:0] HALF   = 32'sd8388608;   // 0.5
+    localparam signed [WIDTH-1:0] ONE    = 32'sd16777216;  // 1.0
     localparam signed [WIDTH-1:0] ZERO   = 32'sd0;
-    localparam signed [WIDTH-1:0] SAT_P  = 32'sd327680;
-    localparam signed [WIDTH-1:0] SAT_N  = -32'sd327680;
+    localparam signed [WIDTH-1:0] SAT_P  = 32'sd50331648;  // +3.0
+    localparam signed [WIDTH-1:0] SAT_N  = -32'sd50331648; // -3.0
 
     always_comb begin
         if (z <= SAT_N) begin
@@ -46,7 +46,7 @@ endmodule
 
 module tanh #(
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] z,
     output logic signed [WIDTH-1:0] y
@@ -55,10 +55,10 @@ module tanh #(
     logic signed [2*WIDTH-1:0] mult;
     logic signed [WIDTH-1:0] z2, z3, z5, z7, z9;
 
-    localparam signed [WIDTH-1:0] ONE     = 32'sd65536;
-    localparam signed [WIDTH-1:0] NEG_ONE = -32'sd65536;
-    localparam signed [WIDTH-1:0] SAT_P   = 32'sd327680;
-    localparam signed [WIDTH-1:0] SAT_N   = -32'sd327680;
+    localparam signed [WIDTH-1:0] ONE     = 32'sd16777216;  // 1.0
+    localparam signed [WIDTH-1:0] NEG_ONE = -32'sd16777216; // -1.0
+    localparam signed [WIDTH-1:0] SAT_P   = 32'sd50331648;  // +3.0
+    localparam signed [WIDTH-1:0] SAT_N   = -32'sd50331648; // -3.0
 
     always_comb begin
         if (z <= SAT_N) begin
@@ -92,7 +92,7 @@ endmodule
 module mac #(
     parameter int N     = 4,
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] x [N],
     input  logic signed [WIDTH-1:0] w [N],
@@ -120,7 +120,7 @@ module lstm_cell_neuron #(
     parameter int N_INPUTS  = 4,
     parameter int N_HIDDEN  = 4,
     parameter int WIDTH     = 32,
-    parameter int FRAC      = 16
+    parameter int FRAC      = 24
 )(
     input  logic signed [WIDTH-1:0] x [N_INPUTS],
     input  logic signed [WIDTH-1:0] h_prev [N_HIDDEN],
@@ -221,7 +221,7 @@ module lstm_cell #(
     parameter int N_INPUTS  = 4,
     parameter int N_HIDDEN  = 4,
     parameter int WIDTH     = 32,
-    parameter int FRAC      = 16
+    parameter int FRAC      = 24
 )(
     input  logic signed [WIDTH-1:0] x [N_INPUTS],
     input  logic signed [WIDTH-1:0] h_prev [N_HIDDEN],
@@ -283,7 +283,7 @@ module lstm_layer #(
     parameter int N_HIDDEN   = 4,
     parameter int N_TIMESTEPS = 4,
     parameter int WIDTH      = 32,
-    parameter int FRAC       = 16
+    parameter int FRAC       = 24
 )(
     input  logic clk,
     input  logic rst_n,

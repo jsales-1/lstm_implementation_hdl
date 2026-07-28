@@ -1,0 +1,764 @@
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun	25.03-s001: Started on Jul 28, 2026 at 11:40:41 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+	Top level design units:
+		linear_layer
+		tanh_layer
+		tb_lstm_network
+        $display("  Total de amostras: %0d", total_samples);
+                                                         |
+xmelab: *W,REALCV (./testbench.sv,457|57): Real argument converted to integer for (%d).
+        $display("  Erros Python:      %0d (%.2f%%)", total_python_errors, total_python_errors/total_samples*100.0);
+                                                                        |
+xmelab: *W,REALCV (./testbench.sv,458|72): Real argument converted to integer for (%d).
+        $display("  Erros Verilog:     %0d (%.2f%%)", total_verilog_errors, total_verilog_errors/total_samples*100.0);
+                                                                         |
+xmelab: *W,REALCV (./testbench.sv,459|73): Real argument converted to integer for (%d).
+Loading snapshot worklib.linear_layer:sv .................... Done
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,PRUASZ: Unpacked array at "tb_lstm_network.dut.wb.mem" of 2097152 elements exceeds limit of 16384 - not probed
+ Use 'probe -create -unpacked 2097152 tb_lstm_network.dut.wb.mem' or 'setenv SHM_UNPACKED_LIMIT 2097152' to adjust limit.
+
+LENDO weights.mem
+Li 73 pesos do arquivo
+
+PROCESSANDO ARQUIVO 0: dados_0.mem
+
+LENDO dados de entrada de dados_0.mem
+  Python result: 0x00398144 (0.224629)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+
+ESCREVENDO PESOS NO DUT
+Escritos 73 pesos
+EXECUTANDO LSTM NETWORK para arquivo 0
+  Resultado Verilog: 3758492 (Q8.24) = 0.224024 (real)
+
+  Python result: 0.224629
+  Verilog result: 0.224024
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 1: dados_1.mem
+
+LENDO dados de entrada de dados_1.mem
+  Python result: 0x00966a12 (0.587556)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 1
+  Resultado Verilog: 9865830 (Q8.24) = 0.588049 (real)
+
+  Python result: 0.587556
+  Verilog result: 0.588049
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 2: dados_2.mem
+
+LENDO dados de entrada de dados_2.mem
+  Python result: 0x00c57588 (0.771325)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 2
+  Resultado Verilog: 12946077 (Q8.24) = 0.771646 (real)
+
+  Python result: 0.771325
+  Verilog result: 0.771646
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 3: dados_3.mem
+
+LENDO dados de entrada de dados_3.mem
+  Python result: 0x00e3a2db (0.889204)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 3
+  Resultado Verilog: 14922489 (Q8.24) = 0.889450 (real)
+
+  Python result: 0.889204
+  Verilog result: 0.889450
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 4: dados_4.mem
+
+LENDO dados de entrada de dados_4.mem
+  Python result: 0x0050d6a6 (0.315775)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 4
+  Resultado Verilog: 5296562 (Q8.24) = 0.315700 (real)
+
+  Python result: 0.315775
+  Verilog result: 0.315700
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 5: dados_5.mem
+
+LENDO dados de entrada de dados_5.mem
+  Python result: 0x00dcd210 (0.862580)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 5
+  Resultado Verilog: 14686321 (Q8.24) = 0.875373 (real)
+
+  Python result: 0.862580
+  Verilog result: 0.875373
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 6: dados_6.mem
+
+LENDO dados de entrada de dados_6.mem
+  Python result: 0x00d7a4c1 (0.842358)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 6
+  Resultado Verilog: 14279900 (Q8.24) = 0.851148 (real)
+
+  Python result: 0.842358
+  Verilog result: 0.851148
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 7: dados_7.mem
+
+LENDO dados de entrada de dados_7.mem
+  Python result: 0x004b2e6e (0.293677)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 7
+  Resultado Verilog: 4925789 (Q8.24) = 0.293600 (real)
+
+  Python result: 0.293677
+  Verilog result: 0.293600
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 8: dados_8.mem
+
+LENDO dados de entrada de dados_8.mem
+  Python result: 0x00b41a2e (0.703524)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 8
+  Resultado Verilog: 11804063 (Q8.24) = 0.703577 (real)
+
+  Python result: 0.703524
+  Verilog result: 0.703577
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 9: dados_9.mem
+
+LENDO dados de entrada de dados_9.mem
+  Python result: 0x009f7144 (0.622822)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 9
+  Resultado Verilog: 10446505 (Q8.24) = 0.622660 (real)
+
+  Python result: 0.622822
+  Verilog result: 0.622660
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 10: dados_10.mem
+
+LENDO dados de entrada de dados_10.mem
+  Python result: 0x00a4f3a2 (0.644343)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 10
+  Resultado Verilog: 10812550 (Q8.24) = 0.644478 (real)
+
+  Python result: 0.644343
+  Verilog result: 0.644478
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 11: dados_11.mem
+
+LENDO dados de entrada de dados_11.mem
+  Python result: 0x00e0bd1a (0.877885)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 11
+  Resultado Verilog: 15056269 (Q8.24) = 0.897424 (real)
+
+  Python result: 0.877885
+  Verilog result: 0.897424
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 12: dados_12.mem
+
+LENDO dados de entrada de dados_12.mem
+  Python result: 0x0051e1c6 (0.319851)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 12
+  Resultado Verilog: 5362331 (Q8.24) = 0.319620 (real)
+
+  Python result: 0.319851
+  Verilog result: 0.319620
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 13: dados_13.mem
+
+LENDO dados de entrada de dados_13.mem
+  Python result: 0x003da9a8 (0.240870)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 13
+  Resultado Verilog: 4039784 (Q8.24) = 0.240790 (real)
+
+  Python result: 0.240870
+  Verilog result: 0.240790
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 14: dados_14.mem
+
+LENDO dados de entrada de dados_14.mem
+  Python result: 0x00364632 (0.212009)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 14
+  Resultado Verilog: 3556760 (Q8.24) = 0.211999 (real)
+
+  Python result: 0.212009
+  Verilog result: 0.211999
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 15: dados_15.mem
+
+LENDO dados de entrada de dados_15.mem
+  Python result: 0x00452296 (0.270059)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 15
+  Resultado Verilog: 4524651 (Q8.24) = 0.269690 (real)
+
+  Python result: 0.270059
+  Verilog result: 0.269690
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 16: dados_16.mem
+
+LENDO dados de entrada de dados_16.mem
+  Python result: 0x009c6390 (0.610894)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 16
+  Resultado Verilog: 10241344 (Q8.24) = 0.610432 (real)
+
+  Python result: 0.610894
+  Verilog result: 0.610432
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 17: dados_17.mem
+
+LENDO dados de entrada de dados_17.mem
+  Python result: 0x00d3e632 (0.827731)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 17
+  Resultado Verilog: 13983595 (Q8.24) = 0.833487 (real)
+
+  Python result: 0.827731
+  Verilog result: 0.833487
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 18: dados_18.mem
+
+LENDO dados de entrada de dados_18.mem
+  Python result: 0x004e47d4 (0.305784)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 18
+  Resultado Verilog: 5130372 (Q8.24) = 0.305794 (real)
+
+  Python result: 0.305784
+  Verilog result: 0.305794
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 19: dados_19.mem
+
+LENDO dados de entrada de dados_19.mem
+  Python result: 0x009effcc (0.621091)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 19
+  Resultado Verilog: 10422521 (Q8.24) = 0.621231 (real)
+
+  Python result: 0.621091
+  Verilog result: 0.621231
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 20: dados_20.mem
+
+LENDO dados de entrada de dados_20.mem
+  Python result: 0x008de00a (0.554200)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 20
+  Resultado Verilog: 9314231 (Q8.24) = 0.555171 (real)
+
+  Python result: 0.554200
+  Verilog result: 0.555171
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 21: dados_21.mem
+
+LENDO dados de entrada de dados_21.mem
+  Python result: 0x0096b472 (0.588691)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 21
+  Resultado Verilog: 9868885 (Q8.24) = 0.588231 (real)
+
+  Python result: 0.588691
+  Verilog result: 0.588231
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 22: dados_22.mem
+
+LENDO dados de entrada de dados_22.mem
+  Python result: 0x00819e66 (0.506323)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 22
+  Resultado Verilog: 8493698 (Q8.24) = 0.506264 (real)
+
+  Python result: 0.506323
+  Verilog result: 0.506264
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 23: dados_23.mem
+
+LENDO dados de entrada de dados_23.mem
+  Python result: 0x00bbfd06 (0.734330)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 23
+  Resultado Verilog: 12330545 (Q8.24) = 0.734958 (real)
+
+  Python result: 0.734330
+  Verilog result: 0.734958
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 24: dados_24.mem
+
+LENDO dados de entrada de dados_24.mem
+  Python result: 0x00b3f812 (0.703004)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 24
+  Resultado Verilog: 11800260 (Q8.24) = 0.703350 (real)
+
+  Python result: 0.703004
+  Verilog result: 0.703350
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 25: dados_25.mem
+
+LENDO dados de entrada de dados_25.mem
+  Python result: 0x00dd25b6 (0.863857)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 25
+  Resultado Verilog: 14711339 (Q8.24) = 0.876864 (real)
+
+  Python result: 0.863857
+  Verilog result: 0.876864
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 26: dados_26.mem
+
+LENDO dados de entrada de dados_26.mem
+  Python result: 0x0089403e (0.536137)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 26
+  Resultado Verilog: 8994325 (Q8.24) = 0.536104 (real)
+
+  Python result: 0.536137
+  Verilog result: 0.536104
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 27: dados_27.mem
+
+LENDO dados de entrada de dados_27.mem
+  Python result: 0x00c84318 (0.782274)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 27
+  Resultado Verilog: 13125027 (Q8.24) = 0.782313 (real)
+
+  Python result: 0.782274
+  Verilog result: 0.782313
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 28: dados_28.mem
+
+LENDO dados de entrada de dados_28.mem
+  Python result: 0x00b71c3b (0.715275)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 28
+  Resultado Verilog: 12005460 (Q8.24) = 0.715581 (real)
+
+  Python result: 0.715275
+  Verilog result: 0.715581
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 29: dados_29.mem
+
+LENDO dados de entrada de dados_29.mem
+  Python result: 0x00460e83 (0.273659)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 29
+  Resultado Verilog: 4590152 (Q8.24) = 0.273594 (real)
+
+  Python result: 0.273659
+  Verilog result: 0.273594
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 30: dados_30.mem
+
+LENDO dados de entrada de dados_30.mem
+  Python result: 0x008d33b6 (0.551570)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 30
+  Resultado Verilog: 9256160 (Q8.24) = 0.551710 (real)
+
+  Python result: 0.551570
+  Verilog result: 0.551710
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 31: dados_31.mem
+
+LENDO dados de entrada de dados_31.mem
+  Python result: 0x006b9fac (0.420405)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 31
+  Resultado Verilog: 7051967 (Q8.24) = 0.420330 (real)
+
+  Python result: 0.420405
+  Verilog result: 0.420330
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 32: dados_32.mem
+
+LENDO dados de entrada de dados_32.mem
+  Python result: 0x00698c6c (0.412299)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 32
+  Resultado Verilog: 6916926 (Q8.24) = 0.412281 (real)
+
+  Python result: 0.412299
+  Verilog result: 0.412281
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 33: dados_33.mem
+
+LENDO dados de entrada de dados_33.mem
+  Python result: 0x003ee9cd (0.245755)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 33
+  Resultado Verilog: 4313050 (Q8.24) = 0.257078 (real)
+
+  Python result: 0.245755
+  Verilog result: 0.257078
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 34: dados_34.mem
+
+LENDO dados de entrada de dados_34.mem
+  Python result: 0x00cdbc60 (0.803656)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 34
+  Resultado Verilog: 13541636 (Q8.24) = 0.807144 (real)
+
+  Python result: 0.803656
+  Verilog result: 0.807144
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 35: dados_35.mem
+
+LENDO dados de entrada de dados_35.mem
+  Python result: 0x009996d4 (0.599958)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 35
+  Resultado Verilog: 10068712 (Q8.24) = 0.600142 (real)
+
+  Python result: 0.599958
+  Verilog result: 0.600142
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 36: dados_36.mem
+
+LENDO dados de entrada de dados_36.mem
+  Python result: 0x006477e6 (0.392455)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 36
+  Resultado Verilog: 6578338 (Q8.24) = 0.392099 (real)
+
+  Python result: 0.392455
+  Verilog result: 0.392099
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 37: dados_37.mem
+
+LENDO dados de entrada de dados_37.mem
+  Python result: 0x004f4803 (0.309693)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 37
+  Resultado Verilog: 5194718 (Q8.24) = 0.309629 (real)
+
+  Python result: 0.309693
+  Verilog result: 0.309629
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 38: dados_38.mem
+
+LENDO dados de entrada de dados_38.mem
+  Python result: 0x0044b00a (0.268311)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 38
+  Resultado Verilog: 4500534 (Q8.24) = 0.268253 (real)
+
+  Python result: 0.268311
+  Verilog result: 0.268253
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 39: dados_39.mem
+
+LENDO dados de entrada de dados_39.mem
+  Python result: 0x0099bc80 (0.600533)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 39
+  Resultado Verilog: 10067053 (Q8.24) = 0.600043 (real)
+
+  Python result: 0.600533
+  Verilog result: 0.600043
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 40: dados_40.mem
+
+LENDO dados de entrada de dados_40.mem
+  Python result: 0x0036a03e (0.213383)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 40
+  Resultado Verilog: 3770104 (Q8.24) = 0.224716 (real)
+
+  Python result: 0.213383
+  Verilog result: 0.224716
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 41: dados_41.mem
+
+LENDO dados de entrada de dados_41.mem
+  Python result: 0x0040a542 (0.252522)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 41
+  Resultado Verilog: 4234956 (Q8.24) = 0.252423 (real)
+
+  Python result: 0.252522
+  Verilog result: 0.252423
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 42: dados_42.mem
+
+LENDO dados de entrada de dados_42.mem
+  Python result: 0x003ecf19 (0.245348)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 42
+  Resultado Verilog: 4115983 (Q8.24) = 0.245332 (real)
+
+  Python result: 0.245348
+  Verilog result: 0.245332
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 43: dados_43.mem
+
+LENDO dados de entrada de dados_43.mem
+  Python result: 0x004f2cbc (0.309276)
+  Ground truth:           0
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 43
+  Resultado Verilog: 5186922 (Q8.24) = 0.309165 (real)
+
+  Python result: 0.309276
+  Verilog result: 0.309165
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 44: dados_44.mem
+
+LENDO dados de entrada de dados_44.mem
+  Python result: 0x00b973fc (0.724426)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 44
+  Resultado Verilog: 12155332 (Q8.24) = 0.724514 (real)
+
+  Python result: 0.724426
+  Verilog result: 0.724514
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 45: dados_45.mem
+
+LENDO dados de entrada de dados_45.mem
+  Python result: 0x00503d79 (0.313438)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 45
+  Resultado Verilog: 5257565 (Q8.24) = 0.313375 (real)
+
+  Python result: 0.313438
+  Verilog result: 0.313375
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 46: dados_46.mem
+
+LENDO dados de entrada de dados_46.mem
+  Python result: 0x00a9db3c (0.663502)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 46
+  Resultado Verilog: 11140278 (Q8.24) = 0.664012 (real)
+
+  Python result: 0.663502
+  Verilog result: 0.664012
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 47: dados_47.mem
+
+LENDO dados de entrada de dados_47.mem
+  Python result: 0x00b721fe (0.715362)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 47
+  Resultado Verilog: 12029514 (Q8.24) = 0.717015 (real)
+
+  Python result: 0.715362
+  Verilog result: 0.717015
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 48: dados_48.mem
+
+LENDO dados de entrada de dados_48.mem
+  Python result: 0x00be8686 (0.744240)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 48
+  Resultado Verilog: 12493229 (Q8.24) = 0.744654 (real)
+
+  Python result: 0.744240
+  Verilog result: 0.744654
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 49: dados_49.mem
+
+LENDO dados de entrada de dados_49.mem
+  Python result: 0x0054202c (0.328616)
+  Ground truth:           1
+Li 20 valores de entrada (esperado: 20)
+EXECUTANDO LSTM NETWORK para arquivo 49
+  Resultado Verilog: 5511857 (Q8.24) = 0.328532 (real)
+
+  Python result: 0.328616
+  Verilog result: 0.328532
+  Ground truth:           1
+
+RELATÓRIO FINAL DE VALIDAÇÃO
+
+Arquivo           | Acert. Python | Acert. Verilog | Ambos Corretos | Ambos Errados | Py Err/Ver Corr | Py Corr/Ver Err
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+dados_0.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_1.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_2.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_3.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_4.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_5.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_6.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_7.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_8.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_9.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_10.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_11.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_12.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_13.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_14.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_15.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_16.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_17.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_18.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_19.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_20.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_21.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_22.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_23.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_24.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_25.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_26.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_27.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_28.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_29.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_30.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_31.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_32.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_33.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_34.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_35.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_36.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_37.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_38.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_39.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_40.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_41.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_42.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_43.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_44.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_45.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_46.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_47.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_48.mem     |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_49.mem     |          0.00% |          0.00% |             0 |             1 |               0 |               0
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+TOTAIS            |         66.00% |         66.00% |             0 |             0 |               0 |               0
+
+MÉTRICA DE REGRESSÃO (Verilog vs Python)
+
+  R² (Coeficiente de Determinação): 0.9995
+
+  Interpretação do R²:
+    ✅ Excelente correlação (R² ≥ 0.9)
+
+RESUMO DE CLASSIFICAÇÃO
+
+  Total de amostras:          50
+  Erros Python:               17 (34.00%)
+  Erros Verilog:              17 (34.00%)
+  Acurácia Verilog:  66.00%
+
+Arquivo de resultados detalhados: resultados.txt
+Arquivo com saída LSTM: resultados_lstm.txt
+
+Simulação completa!
+Simulation complete via $finish(1) at time 81745 NS + 3
+./testbench.sv:577         $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Jul 28, 2026 at 11:40:44 EDT  (total: 00:00:03)

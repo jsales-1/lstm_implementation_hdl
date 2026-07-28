@@ -3,18 +3,18 @@
 module tb_lstm_network;
 
     parameter int WIDTH = 32;
-    parameter int FRAC  = 16;
+    parameter int FRAC  = 24;
     
     parameter int LSTM_INPUTS  = 4;
-    parameter int LSTM_HIDDEN  = 16;
-    parameter int TIMESTEPS    = 20;
-    parameter int RELU_INPUTS  = 16;
-    parameter int RELU_NEURONS = 16;
-    parameter int OUT_INPUTS   = 16;
+    parameter int LSTM_HIDDEN  = 2;
+    parameter int TIMESTEPS    = 5;
+    parameter int RELU_INPUTS  = 2;
+    parameter int RELU_NEURONS = 4;
+    parameter int OUT_INPUTS   = 4;
     
     // Parâmetros para processamento múltiplo
-    parameter int NUM_FILES = 40;          // Número de arquivos a processar (0 a NUM_FILES-1)
-    parameter real THRESHOLD = 0.5;        // Limiar para classificação
+    parameter int NUM_FILES = 50;
+    parameter real THRESHOLD = 0.5;
     
     logic clk;
     logic reset;
@@ -31,6 +31,9 @@ module tb_lstm_network;
     logic ready;
     
     shortreal y_frac;
+    
+    // Arquivo para salvar saída da LSTM
+    int lstm_results_file;
     
     lstm_network #(
         .WIDTH(WIDTH),
@@ -58,7 +61,7 @@ module tb_lstm_network;
     logic signed [31:0] mem_data [0:2047];
     int n_weights;
     
-    // Arrays para dados de entrada - agora com tamanho suficiente para todos os timesteps
+    // Arrays para dados de entrada
     logic [20:0] x_addr [0:TIMESTEPS*LSTM_INPUTS-1];
     logic signed [31:0] x_data [0:TIMESTEPS*LSTM_INPUTS-1];
     int n_x_values;
@@ -84,20 +87,50 @@ module tb_lstm_network;
     metrics_t file_metrics [0:NUM_FILES-1];
     int processed_files;
     
-    // Arquivo de resultados (apenas este, sem internal_outputs)
+    // Arrays para cálculo do R²
+    real python_values [0:NUM_FILES-1];
+    real verilog_values [0:NUM_FILES-1];
+    
+    // Arquivo de resultados
     int results_file;
     
     integer i, t, f, file_idx;
     
     function real q2real;
         input signed [31:0] q;
-        q2real = q / 65536.0;
+        q2real = q / 16777216.0;
     endfunction
     
     function signed [31:0] real2q;
         input real r;
-        real2q = $rtoi(r * 65536.0);
+        real2q = $rtoi(r * 16777216.0);
     endfunction
+    
+    // ============================================================
+    // FUNÇÃO PARA SALVAR SAÍDA DA LSTM EM ARQUIVO
+    // ============================================================
+    task save_lstm_outputs();
+        real lstm_val;
+        
+        lstm_results_file = $fopen("resultados_lstm.txt", "a");
+        if (lstm_results_file == 0) begin
+            $display("ERRO: Não foi possível abrir resultados_lstm.txt");
+            return;
+        end
+        
+        if (file_idx == 0) begin
+            $fdisplay(lstm_results_file, "# Saída da LSTM - Valores em float32 (Q8.24)");
+            $fdisplay(lstm_results_file, "# Formato: [Arquivo] [Neuron] [Value]");
+            $fdisplay(lstm_results_file, "#----------------------------------------");
+        end
+        
+        for (int idx = 0; idx < LSTM_HIDDEN; idx++) begin
+            lstm_val = q2real(dut.lstm_h_out[TIMESTEPS-1][idx]);
+            $fdisplay(lstm_results_file, "%0d %d %f", file_idx, idx, lstm_val);
+        end
+        
+        $fclose(lstm_results_file);
+    endtask
     
     // Função para limpar a matriz x
     task clear_x();
@@ -109,15 +142,16 @@ module tb_lstm_network;
     endtask
     
     // ============================================================
-    // LEITURA ROBUSTA LINHA A LINHA (agora com capacidade total)
+    // LEITURA ROBUSTA LINHA A LINHA
     // ============================================================
     task load_data_from_file(input string filename, output int loaded_count);
         int fd_x;
         string line;
         int addr_val, data_val, python_val_int, gt_val;
         int fields;
-        int max_values = TIMESTEPS * LSTM_INPUTS;   // 80
+        int max_values;
         
+        max_values = TIMESTEPS * LSTM_INPUTS;
         loaded_count = 0;
         n_x_values = 0;
         python_result = 0;
@@ -132,12 +166,10 @@ module tb_lstm_network;
             return;
         end
         
-        // Lê linha por linha
         while (!$feof(fd_x)) begin
             if ($fgets(line, fd_x) == 0) break;
-            line = line.substr(0, line.len()-1); // remove newline
+            line = line.substr(0, line.len()-1);
             
-            // Tenta parsear com 4 campos (primeira linha especial)
             fields = $sscanf(line, "%h %h %h %d", addr_val, data_val, python_val_int, gt_val);
             if (fields == 4) begin
                 if (loaded_count == 0) begin
@@ -146,7 +178,6 @@ module tb_lstm_network;
                     $display("  Python result: 0x%08X (%f)", python_result, q2real(python_result));
                     $display("  Ground truth: %d", ground_truth);
                 end
-                // Armazena o dado de entrada (segundo campo)
                 if (loaded_count < max_values) begin
                     x_addr[loaded_count] = addr_val;
                     x_data[loaded_count] = data_val;
@@ -154,7 +185,6 @@ module tb_lstm_network;
                 end
             end
             else begin
-                // Tenta parsear com 2 campos (linhas normais)
                 fields = $sscanf(line, "%h %h", addr_val, data_val);
                 if (fields == 2) begin
                     if (loaded_count < max_values) begin
@@ -163,7 +193,6 @@ module tb_lstm_network;
                         loaded_count++;
                     end
                 end
-                // senão, linha vazia ou formato inesperado -> ignora
             end
         end
         
@@ -182,8 +211,8 @@ module tb_lstm_network;
             int timestep, feature;
             
             addr_temp = x_addr[idx];
-            timestep = addr_temp >> 2;   // endereço / 4
-            feature = addr_temp & 3;     // resto da divisão por 4
+            timestep = addr_temp >> 2;
+            feature = addr_temp & 3;
             
             if (timestep < TIMESTEPS && feature < LSTM_INPUTS) begin
                 x[timestep][feature] = x_data[idx];
@@ -232,7 +261,7 @@ module tb_lstm_network;
         result = y_out;
         y_frac = q2real(y_out);
         
-        $display("  Resultado Verilog: %0d (Q16.16) = %.6f (real)", y_out, y_frac);
+        $display("  Resultado Verilog: %0d (Q8.24) = %.6f (real)", y_out, y_frac);
     endtask
     
     // Função para calcular métricas
@@ -252,7 +281,6 @@ module tb_lstm_network;
         python_correct = (python_class == ground_truth) ? 1 : 0;
         verilog_correct = (verilog_class == ground_truth) ? 1 : 0;
         
-        // Atualiza métricas
         file_metrics[file_idx].total_samples++;
         
         if (!python_correct) file_metrics[file_idx].python_errors++;
@@ -268,7 +296,9 @@ module tb_lstm_network;
             file_metrics[file_idx].python_correct_verilog_wrong++;
         end
         
-        // Escreve no arquivo de resultados
+        python_values[file_idx] = python_val;
+        verilog_values[file_idx] = verilog_val;
+        
         if (results_file != 0) begin
             $fdisplay(results_file, "%f %f %d", verilog_val, python_val, ground_truth);
         end
@@ -288,25 +318,94 @@ module tb_lstm_network;
         file_metrics[idx].verilog_accuracy = 0.0;
     endtask
     
+    // ============================================================
+    // FUNÇÃO PARA CALCULAR R²
+    // ============================================================
+    function automatic real calculate_r2(
+        ref real actual[0:NUM_FILES-1],
+        ref real predicted[0:NUM_FILES-1],
+        int n
+    );
+        real mean_actual;
+        real ss_tot;
+        real ss_res;
+        real diff_actual;
+        real diff_pred;
+        int j;
+        
+        mean_actual = 0.0;
+        ss_tot = 0.0;
+        ss_res = 0.0;
+        calculate_r2 = 0.0;
+        
+        if (n < 2) begin
+            calculate_r2 = 0.0;
+            return calculate_r2;
+        end
+        
+        for (j = 0; j < n; j++) begin
+            mean_actual = mean_actual + actual[j];
+        end
+        mean_actual = mean_actual / n;
+        
+        for (j = 0; j < n; j++) begin
+            diff_actual = actual[j] - mean_actual;
+            ss_tot = ss_tot + (diff_actual * diff_actual);
+            
+            diff_pred = actual[j] - predicted[j];
+            ss_res = ss_res + (diff_pred * diff_pred);
+        end
+        
+        if (ss_tot != 0.0) begin
+            calculate_r2 = 1.0 - (ss_res / ss_tot);
+        end else begin
+            calculate_r2 = 0.0;
+        end
+        
+        return calculate_r2;
+    endfunction
+    
     // Função para gerar relatório final
     task generate_report();
         real total_python_errors, total_verilog_errors;
         real total_samples;
+        real r2_python_verilog;
+        
+        real python_vals [0:NUM_FILES-1];
+        real verilog_vals [0:NUM_FILES-1];
+        int valid_samples;
+        int idx;
+        
+        for (idx = 0; idx < NUM_FILES; idx++) begin
+            python_vals[idx] = 0.0;
+            verilog_vals[idx] = 0.0;
+        end
+        
+        valid_samples = 0;
+        for (idx = 0; idx < processed_files; idx++) begin
+            if (file_metrics[idx].total_samples > 0) begin
+                python_vals[valid_samples] = python_values[idx];
+                verilog_vals[valid_samples] = verilog_values[idx];
+                valid_samples++;
+            end
+        end
+        
+        r2_python_verilog = calculate_r2(python_vals, verilog_vals, valid_samples);
         
         $display("");
-        $display("========================================");
+       
         $display("RELATÓRIO FINAL DE VALIDAÇÃO");
-        $display("========================================");
+       
         $display("");
         
         $display("Arquivo           | Acert. Python | Acert. Verilog | Ambos Corretos | Ambos Errados | Py Err/Ver Corr | Py Corr/Ver Err");
         $display("------------------+---------------+---------------+----------------+---------------+-----------------+----------------");
         
-        total_python_errors = 0;
-        total_verilog_errors = 0;
-        total_samples = 0;
+        total_python_errors = 0.0;
+        total_verilog_errors = 0.0;
+        total_samples = 0.0;
         
-        for (int idx = 0; idx < processed_files; idx++) begin
+        for (idx = 0; idx < processed_files; idx++) begin
             if (file_metrics[idx].total_samples > 0) begin
                 file_metrics[idx].python_accuracy = 1.0 - (file_metrics[idx].python_errors / file_metrics[idx].total_samples);
                 file_metrics[idx].verilog_accuracy = 1.0 - (file_metrics[idx].verilog_errors / file_metrics[idx].total_samples);
@@ -321,9 +420,9 @@ module tb_lstm_network;
                      file_metrics[idx].python_wrong_verilog_correct,
                      file_metrics[idx].python_correct_verilog_wrong);
             
-            total_python_errors += file_metrics[idx].python_errors;
-            total_verilog_errors += file_metrics[idx].verilog_errors;
-            total_samples += file_metrics[idx].total_samples;
+            total_python_errors = total_python_errors + file_metrics[idx].python_errors;
+            total_verilog_errors = total_verilog_errors + file_metrics[idx].verilog_errors;
+            total_samples = total_samples + file_metrics[idx].total_samples;
         end
         
         $display("------------------+---------------+---------------+----------------+---------------+-----------------+----------------");
@@ -333,13 +432,36 @@ module tb_lstm_network;
                   0, 0, 0, 0);
         
         $display("");
-        $display("RESUMO:");
+       
+        $display("MÉTRICA DE REGRESSÃO (Verilog vs Python)");
+       
+        $display("");
+        $display("  R² (Coeficiente de Determinação): %6.4f", r2_python_verilog);
+        $display("");
+        $display("  Interpretação do R²:");
+        if (r2_python_verilog >= 0.9) begin
+            $display("    ✅ Excelente correlação (R² ≥ 0.9)");
+        end else if (r2_python_verilog >= 0.7) begin
+            $display("    ✅ Boa correlação (R² ≥ 0.7)");
+        end else if (r2_python_verilog >= 0.5) begin
+            $display("    ⚠️ Correlação moderada (R² ≥ 0.5)");
+        end else begin
+            $display("    ❌ Baixa correlação (R² < 0.5) - Verificar implementação");
+        end
+        $display("");
+        
+       
+        $display("RESUMO DE CLASSIFICAÇÃO");
+       
+        $display("");
         $display("  Total de amostras: %0d", total_samples);
-        $display("  Erros Python: %0d (%.2f%%)", total_python_errors, total_python_errors/total_samples*100.0);
-        $display("  Erros Verilog: %0d (%.2f%%)", total_verilog_errors, total_verilog_errors/total_samples*100.0);
+        $display("  Erros Python:      %0d (%.2f%%)", total_python_errors, total_python_errors/total_samples*100.0);
+        $display("  Erros Verilog:     %0d (%.2f%%)", total_verilog_errors, total_verilog_errors/total_samples*100.0);
+        $display("  Acurácia Verilog:  %.2f%%", (total_samples - total_verilog_errors) / total_samples * 100.0);
         $display("");
         $display("Arquivo de resultados detalhados: resultados.txt");
-        $display("========================================");
+        $display("Arquivo com saída LSTM: resultados_lstm.txt");
+       
     endtask
     
     initial begin
@@ -348,7 +470,6 @@ module tb_lstm_network;
         $dumpfile("lstm_wave.vcd");
         $dumpvars(0, tb_lstm_network);
         
-        // Abre arquivo de resultados (apenas este)
         results_file = $fopen("resultados.txt", "w");
         if (results_file == 0) begin
             $display("ERRO: Não foi possível criar resultados.txt");
@@ -407,9 +528,9 @@ module tb_lstm_network;
             $fclose(fd_check);
             
             $display("");
-            $display("========================================");
+           
             $display("PROCESSANDO ARQUIVO %0d: %s", file_idx, filename);
-            $display("========================================");
+           
             
             init_metrics(processed_files, filename);
             
@@ -423,16 +544,10 @@ module tb_lstm_network;
             
             load_x_array();
             
-            /*$display("");
-            $display("Valores de entrada carregados (primeiros 5 timesteps):");
-            for (t = 0; t < (TIMESTEPS > 5 ? 5 : TIMESTEPS); t++) begin
-                $display("  x[%0d]: [%0d, %0d, %0d, %0d]", 
-                         t, x[t][0], x[t][1], x[t][2], x[t][3]);
-            end
-            if (TIMESTEPS > 5) $display("  ... (mais timesteps)");
-            */
             reset_dut();
-            write_weights();
+            if(file_idx == 0) begin
+                write_weights();
+            end
             run_network(verilog_result);
             
             python_val = q2real(python_result);
@@ -442,6 +557,11 @@ module tb_lstm_network;
             $display("  Python result: %.6f", python_val);
             $display("  Verilog result: %.6f", verilog_val);
             $display("  Ground truth: %d", ground_truth);
+            
+            // ============================================================
+            // SALVAR SAÍDA DA LSTM EM ARQUIVO (todos os arquivos)
+            // ============================================================
+            save_lstm_outputs();
             
             calculate_metrics(filename, python_val, verilog_val, ground_truth, 0);
             

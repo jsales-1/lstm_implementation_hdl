@@ -1,13 +1,13 @@
 module lstm_network #(
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16,
+    parameter int FRAC  = 24,
     
     parameter int LSTM_INPUTS  = 4,
-    parameter int LSTM_HIDDEN  = 32,
-    parameter int TIMESTEPS    = 120,
-    parameter int RELU_INPUTS  = 16,
-    parameter int RELU_NEURONS = 32,
-    parameter int OUT_INPUTS   = 32
+    parameter int LSTM_HIDDEN  = 2,
+    parameter int TIMESTEPS    = 5,
+    parameter int RELU_INPUTS  = 2,
+    parameter int RELU_NEURONS = 4,
+    parameter int OUT_INPUTS   = 4
 )(
     input  logic clk,
     input  logic reset,
@@ -195,7 +195,7 @@ module lstm_network #(
 
                 //FORGET GATE (00) =
                 LOAD_LSTM_WX_FORGET: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b00, neuron, 1'b0, idx);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b01, neuron, 1'b0, idx);
                     state <= LOAD_LSTM_WX_FORGET_DATA;
                 end
                 
@@ -217,7 +217,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_FORGET: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b00, neuron, 1'b1, idx);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b01, neuron, 1'b1, idx);
                     state <= LOAD_LSTM_WH_FORGET_DATA;
                 end
                 
@@ -239,7 +239,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_FORGET: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b1, 2'b00, neuron, 1'b0, 6'd0);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b1, 2'b01, neuron, 1'b0, 6'd0);
                     state <= LOAD_LSTM_BIAS_FORGET_DATA;
                 end
                 
@@ -256,7 +256,7 @@ module lstm_network #(
 
                 //INPUT GATE (01) =
                 LOAD_LSTM_WX_INPUT: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b01, neuron, 1'b0, idx);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b00, neuron, 1'b0, idx);
                     state <= LOAD_LSTM_WX_INPUT_DATA;
                 end
                 
@@ -278,7 +278,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_INPUT: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b01, neuron, 1'b1, idx);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b0, 2'b00, neuron, 1'b1, idx);
                     state <= LOAD_LSTM_WH_INPUT_DATA;
                 end
                 
@@ -300,7 +300,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_INPUT: begin
-                    addr_internal <= gen_lstm_addr(4'd0, 1'b1, 2'b01, neuron, 1'b0, 6'd0);
+                  addr_internal <= gen_lstm_addr(4'd0, 1'b1, 2'b00, neuron, 1'b0, 6'd0);
                     state <= LOAD_LSTM_BIAS_INPUT_DATA;
                 end
                 

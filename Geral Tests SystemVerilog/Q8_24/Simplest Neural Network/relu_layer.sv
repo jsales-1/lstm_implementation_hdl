@@ -2,7 +2,7 @@
 module perceptron_relu #(
     parameter int N     = 4,
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] x [N],
     input  logic signed [WIDTH-1:0] w [N],
@@ -38,7 +38,7 @@ module relu_layer #(
     parameter int N_INPUTS  = 4,
     parameter int N_NEURONS = 3,
     parameter int WIDTH     = 32,
-    parameter int FRAC      = 16
+    parameter int FRAC      = 24
 )(
     input  logic signed [WIDTH-1:0] x [N_INPUTS],
     input  logic signed [WIDTH-1:0] w [N_NEURONS][N_INPUTS],
@@ -48,6 +48,7 @@ module relu_layer #(
 );
 
     genvar n;
+  
 
     generate
         for (n = 0; n < N_NEURONS; n++) begin : GEN_NEURONS

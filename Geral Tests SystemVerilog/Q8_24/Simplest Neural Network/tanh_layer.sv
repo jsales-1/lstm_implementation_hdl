@@ -1,7 +1,7 @@
 module perceptron_tanh #(
     parameter int N     = 4,
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] x [N],
     input  logic signed [WIDTH-1:0] w [N],
@@ -24,14 +24,11 @@ module perceptron_tanh #(
     logic signed [WIDTH-1:0] z9;
 
     // constantes Q16.16
-    localparam signed [WIDTH-1:0] ONE     = 32'sd65536;     // 1.0
-    localparam signed [WIDTH-1:0] NEG_ONE = -32'sd65536;    // -1.0
+    localparam signed [WIDTH-1:0] ONE     = 32'sd16777216;  // 1.0
+    localparam signed [WIDTH-1:0] NEG_ONE = -32'sd16777216; // -1.0
     localparam signed [WIDTH-1:0] ZERO    = 32'sd0;
-
-    // saturação (±3 já é suficiente para tanh)
-    localparam signed [WIDTH-1:0] SAT_P  = 32'sd196608;   // +3.0
-    localparam signed [WIDTH-1:0] SAT_N  = -32'sd196608;  // -3.0
-
+    localparam signed [WIDTH-1:0] SAT_P   = 32'sd50331648;  // +3.0
+    localparam signed [WIDTH-1:0] SAT_N   = -32'sd50331648; // -3.0
     always_comb begin
 
         // soma linear
