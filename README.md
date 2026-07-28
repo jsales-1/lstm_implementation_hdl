@@ -43,7 +43,7 @@ LSTM_IMPLEMENTATION_HDL/
 <h2>Register Transfer Level (RTL)</h2>
 
 <p align="justify">
-A implementação RTL está disponível no diretório <code>Neuralnetworks LSTM/</code>. O projeto é composto pelos seguintes módulos principais:
+O projeto é composto pelos seguintes módulos principais:
 </p>
 
 <ul>
