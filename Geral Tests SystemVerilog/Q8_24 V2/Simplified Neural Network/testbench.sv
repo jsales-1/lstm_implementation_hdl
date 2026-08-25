@@ -7,18 +7,18 @@ module tb_lstm_network;
     parameter int FRAC  = 24;
     
     parameter int LSTM_INPUTS  = 4;
-    parameter int LSTM_HIDDEN  = 16;
+    parameter int LSTM_HIDDEN  = 8;
     parameter int TIMESTEPS    = 120;
-    parameter int RELU_INPUTS  = 16;
-    parameter int RELU_NEURONS = 32;
-    parameter int OUT_INPUTS   = 32;
+    parameter int RELU_INPUTS  = 8;
+    parameter int RELU_NEURONS = 8;
+    parameter int OUT_INPUTS   = 8;
     
-    // Parâmetros para processamento múltiplo
-    parameter int NUM_FILES = 5;
+    parameter int NUM_FILES = 10;
     parameter real THRESHOLD = 0.5;
     
     logic clk;
     logic reset;
+  	logic clear;
     
     initial clk = 0;
     always #5 clk = ~clk;
@@ -438,18 +438,7 @@ module tb_lstm_network;
        
         $display("");
         $display("  R² (Coeficiente de Determinação): %6.4f", r2_python_verilog);
-        $display("");
-        $display("  Interpretação do R²:");
-        if (r2_python_verilog >= 0.9) begin
-            $display("    ✅ Excelente correlação (R² ≥ 0.9)");
-        end else if (r2_python_verilog >= 0.7) begin
-            $display("    ✅ Boa correlação (R² ≥ 0.7)");
-        end else if (r2_python_verilog >= 0.5) begin
-            $display("    ⚠️ Correlação moderada (R² ≥ 0.5)");
-        end else begin
-            $display("    ❌ Baixa correlação (R² < 0.5) - Verificar implementação");
-        end
-        $display("");
+     
         
        
         $display("RESUMO DE CLASSIFICAÇÃO");

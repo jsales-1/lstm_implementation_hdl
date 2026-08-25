@@ -1,0 +1,206 @@
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun	25.03-s001: Started on Aug 25, 2026 at 19:15:51 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+    ) dut (
+        |
+xmelab: *W,CUVWSI (./testbench.sv,48|8): 1 input port was not connected:
+xmelab: (./lstm_network.sv,15): clear
+
+	Top level design units:
+		linear_layer
+		tanh_layer
+		tb_lstm_network
+        .addr(addr),
+                 |
+xmelab: *W,CUVMPW (./testbench.sv,53|17): port sizes differ in port connection(21/12) for the instance(tb_lstm_network) .
+        $display("  Total de amostras: %0d", total_samples);
+                                                         |
+xmelab: *W,REALCV (./testbench.sv,447|57): Real argument converted to integer for (%d).
+        $display("  Erros Python:      %0d (%.2f%%)", total_python_errors, total_python_errors/total_samples*100.0);
+                                                                        |
+xmelab: *W,REALCV (./testbench.sv,448|72): Real argument converted to integer for (%d).
+        $display("  Erros Verilog:     %0d (%.2f%%)", total_verilog_errors, total_verilog_errors/total_samples*100.0);
+                                                                         |
+xmelab: *W,REALCV (./testbench.sv,449|73): Real argument converted to integer for (%d).
+Loading snapshot worklib.linear_layer:sv .................... Done
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+
+LENDO weights.mem
+Li 497 pesos do arquivo
+
+PROCESSANDO ARQUIVO 0: dados_0.mem
+
+LENDO dados de entrada de dados_0.mem
+  Python result: 0x00097bf7 (0.037048)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 0
+  Resultado Verilog: 0 (Q8.24) = 0.000000 (real)
+
+  Python result: 0.037048
+  Verilog result: 0.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 1: dados_1.mem
+
+LENDO dados de entrada de dados_1.mem
+  Python result: 0x00fdee86 (0.991921)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 1
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.991921
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 2: dados_2.mem
+
+LENDO dados de entrada de dados_2.mem
+  Python result: 0x00158ff5 (0.084228)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 2
+  Resultado Verilog: 391394 (Q8.24) = 0.023329 (real)
+
+  Python result: 0.084228
+  Verilog result: 0.023329
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 3: dados_3.mem
+
+LENDO dados de entrada de dados_3.mem
+  Python result: 0x00fef6b1 (0.995952)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 3
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.995952
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 4: dados_4.mem
+
+LENDO dados de entrada de dados_4.mem
+  Python result: 0x000daeca (0.053448)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 4
+  Resultado Verilog: 6920004 (Q8.24) = 0.412464 (real)
+
+  Python result: 0.053448
+  Verilog result: 0.412464
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 5: dados_5.mem
+
+LENDO dados de entrada de dados_5.mem
+  Python result: 0x00fe9566 (0.994467)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 5
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.994467
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 6: dados_6.mem
+
+LENDO dados de entrada de dados_6.mem
+  Python result: 0x00fddb28 (0.991625)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 6
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.991625
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 7: dados_7.mem
+
+LENDO dados de entrada de dados_7.mem
+  Python result: 0x009197b0 (0.568721)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 7
+  Resultado Verilog: 9620330 (Q8.24) = 0.573416 (real)
+
+  Python result: 0.568721
+  Verilog result: 0.573416
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 8: dados_8.mem
+
+LENDO dados de entrada de dados_8.mem
+  Python result: 0x0085f873 (0.523322)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 8
+  Resultado Verilog: 8832781 (Q8.24) = 0.526475 (real)
+
+  Python result: 0.523322
+  Verilog result: 0.526475
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 9: dados_9.mem
+
+LENDO dados de entrada de dados_9.mem
+  Python result: 0x0048d5a0 (0.284510)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 9
+  Resultado Verilog: 4785435 (Q8.24) = 0.285234 (real)
+
+  Python result: 0.284510
+  Verilog result: 0.285234
+  Ground truth:           0
+
+RELATÓRIO FINAL DE VALIDAÇÃO
+
+Arquivo           | Acert. Python | Acert. Verilog | Ambos Corretos | Ambos Errados | Py Err/Ver Corr | Py Corr/Ver Err
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+dados_0.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_1.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_2.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_3.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_4.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_5.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_6.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_7.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_8.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_9.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+TOTAIS            |         80.00% |         80.00% |             0 |             0 |               0 |               0
+
+MÉTRICA DE REGRESSÃO (Verilog vs Python)
+
+  R² (Coeficiente de Determinação): 0.9153
+RESUMO DE CLASSIFICAÇÃO
+
+  Total de amostras:          10
+  Erros Python:                2 (20.00%)
+  Erros Verilog:               2 (20.00%)
+  Acurácia Verilog:  80.00%
+
+Arquivo de resultados detalhados: resultados.txt
+Arquivo com saída LSTM: resultados_lstm.txt
+
+Simulação completa!
+Simulation complete via $finish(1) at time 117485 NS + 3
+./testbench.sv:567         $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Aug 25, 2026 at 19:16:08 EDT  (total: 00:00:17)

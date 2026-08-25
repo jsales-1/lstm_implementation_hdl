@@ -1,6 +1,4 @@
-# README
-
-<h1>Implementação e Verificação de Rede Neural LSTM em Hardware</h1>
+<h1>Implementação e Verificação de Rede Neural LSTM em Linguagem de Descrição de Hardware</h1>
 
 <p align="justify">
 Este repositório contém o projeto de implementação e verificação de uma rede neural LSTM (Long Short-Term Memory) em hardware, desenvolvido para a disciplina SD292 - Trabalho Orientado II. O projeto abrange desde a descrição RTL em SystemVerilog até a verificação funcional utilizando testbenches direcionados, ambiente UVM e asserções.

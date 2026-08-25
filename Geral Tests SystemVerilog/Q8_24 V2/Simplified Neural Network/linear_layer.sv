@@ -2,7 +2,7 @@
 module perceptron_linear #(
     parameter int N     = 4,
     parameter int WIDTH = 32,
-    parameter int FRAC  = 16
+    parameter int FRAC  = 24
 )(
     input  logic signed [WIDTH-1:0] x [N],
     input  logic signed [WIDTH-1:0] w [N],
@@ -42,7 +42,7 @@ module linear_layer #(
     parameter int N_INPUTS  = 4,
     parameter int N_NEURONS = 3,
     parameter int WIDTH     = 32,
-    parameter int FRAC      = 16
+    parameter int FRAC      = 24
 )(
     input  logic signed [WIDTH-1:0] x [N_INPUTS],
     input  logic signed [WIDTH-1:0] w [N_NEURONS][N_INPUTS],
