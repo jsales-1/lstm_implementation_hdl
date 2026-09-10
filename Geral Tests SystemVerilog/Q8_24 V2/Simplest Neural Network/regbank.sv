@@ -14,9 +14,7 @@ module weight_bank #(
 
     logic signed [WIDTH-1:0] mem [0:MAX_SIZE-1];
 
-    // ============================================================
     // DECODIFICAÇÃO (12 bits)
-    // ============================================================
     // Bits 11-10: layer     (2 bits) → 0 a 3
     // Bit  9:     is_bias   (1 bit)  → 0 = peso, 1 = bias
     // Bits 8-7:   gate      (2 bits) → 0 a 3
@@ -38,7 +36,7 @@ module weight_bank #(
     assign recurrent = addr[3];
     assign idx       = addr[2:0];
 
-    // MAPEAMENTO DOS GATES (MANTIDO O QUE FUNCIONA)
+    // MAPEAMENTO DOS GATES
     // gate:
     // 00 -> input  
     // 01 -> forget 

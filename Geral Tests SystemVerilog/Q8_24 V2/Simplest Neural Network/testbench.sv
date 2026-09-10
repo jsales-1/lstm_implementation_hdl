@@ -14,7 +14,6 @@ module tb_lstm_network;
     parameter int RELU_NEURONS = 4;
     parameter int OUT_INPUTS   = 4;
     
-    // Parâmetros para processamento múltiplo
     parameter int NUM_FILES = 50;
     parameter real THRESHOLD = 0.5;
     
@@ -109,9 +108,7 @@ module tb_lstm_network;
         real2q = $rtoi(r * 16777216.0);
     endfunction
     
-    // ============================================================
     // FUNÇÃO PARA SALVAR SAÍDA DA LSTM EM ARQUIVO
-    // ============================================================
     task save_lstm_outputs();
         real lstm_val;
         
@@ -144,9 +141,7 @@ module tb_lstm_network;
         end
     endtask
     
-    // ============================================================
     // LEITURA ROBUSTA LINHA A LINHA
-    // ============================================================
     task load_data_from_file(input string filename, output int loaded_count);
         int fd_x;
         string line;
@@ -321,9 +316,7 @@ module tb_lstm_network;
         file_metrics[idx].verilog_accuracy = 0.0;
     endtask
     
-    // ============================================================
     // FUNÇÃO PARA CALCULAR R²
-    // ============================================================
     function automatic real calculate_r2(
         ref real actual[0:NUM_FILES-1],
         ref real predicted[0:NUM_FILES-1],
@@ -469,9 +462,7 @@ module tb_lstm_network;
         end
         $fdisplay(results_file, "# Verilog Python GroundTruth");
         
-        // =============================================
         // CARREGA PESOS UMA ÚNICA VEZ
-        // =============================================
         $display("");
         $display("LENDO weights.mem");
         
@@ -499,9 +490,7 @@ module tb_lstm_network;
         
         $display("Li %0d pesos do arquivo", n_weights);
         
-        // =============================================
         // LOOP PRINCIPAL: PROCESSAR MÚLTIPLOS ARQUIVOS
-        // =============================================
         processed_files = 0;
         
         for (file_idx = 0; file_idx < NUM_FILES; file_idx++) begin
@@ -550,9 +539,7 @@ module tb_lstm_network;
             $display("  Verilog result: %.6f", verilog_val);
             $display("  Ground truth: %d", ground_truth);
             
-            // ============================================================
             // SALVAR SAÍDA DA LSTM EM ARQUIVO (todos os arquivos)
-            // ============================================================
             save_lstm_outputs();
             
             calculate_metrics(filename, python_val, verilog_val, ground_truth, 0);

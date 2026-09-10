@@ -3,18 +3,18 @@ module lstm_network #(
     parameter int FRAC  = 24,
     
     parameter int LSTM_INPUTS  = 4,
-    parameter int LSTM_HIDDEN  = 2,        // Máximo 8 (3 bits)
+    parameter int LSTM_HIDDEN  = 2,        
     parameter int TIMESTEPS    = 5,
-    parameter int RELU_INPUTS  = 2,         // Máximo 8 (3 bits)
-    parameter int RELU_NEURONS = 4,         // Máximo 8 (3 bits)
-    parameter int OUT_INPUTS   = 4          // Máximo 8 (3 bits)
+    parameter int RELU_INPUTS  = 2,        
+    parameter int RELU_NEURONS = 4,       
+    parameter int OUT_INPUTS   = 4         
 )(
     input  logic clk,
     input  logic reset,
     input  logic mode,
     input  logic clear,
     input  logic we,
-    input  logic [11:0] addr,              // 12 bits (era 21)
+    input  logic [11:0] addr,             
     input  logic signed [WIDTH-1:0] data_in,
     input  logic signed [WIDTH-1:0] x [TIMESTEPS][LSTM_INPUTS],
     output logic signed [WIDTH-1:0] y_out,
@@ -36,9 +36,7 @@ module lstm_network #(
 
     assign addr_mux = (mode == 0) ? addr : addr_internal;
 
-    // ============================================================
     // PESOS LSTM (limitados para 12 bits)
-    // ============================================================
     // LSTM_HIDDEN = 8, LSTM_INPUTS = 4
     
     // Forget Gate (gate 01 - o que funciona)
@@ -61,21 +59,15 @@ module lstm_network #(
     logic signed [WIDTH-1:0] lstm_wh_output [LSTM_HIDDEN][LSTM_HIDDEN];
     logic signed [WIDTH-1:0] lstm_bias_output [LSTM_HIDDEN];
     
-    // ============================================================
     // PESOS ReLU (layer 1)
-    // ============================================================
     logic signed [WIDTH-1:0] relu_w [RELU_NEURONS][RELU_INPUTS];
     logic signed [WIDTH-1:0] relu_bias [RELU_NEURONS];
     
-    // ============================================================
     // PESOS Output (layer 2)
-    // ============================================================
     logic signed [WIDTH-1:0] out_w [1][OUT_INPUTS];
     logic signed [WIDTH-1:0] out_bias [1];
     
-    // ============================================================
     // SINAIS INTERMEDIÁRIOS
-    // ============================================================
     logic signed [WIDTH-1:0] lstm_h_out [TIMESTEPS][LSTM_HIDDEN];
     logic signed [WIDTH-1:0] lstm_c_final [LSTM_HIDDEN];
     logic signed [WIDTH-1:0] relu_y [RELU_NEURONS];
@@ -84,9 +76,7 @@ module lstm_network #(
     logic lstm_done;
     logic lstm_start;
 
-    // ============================================================
     // FSM PARA CARREGAR PESOS (12 bits)
-    // ============================================================
     // Bits 11-10: layer     (2 bits) → 0=LSTM, 1=ReLU, 2=Output
     // Bit  9:     is_bias   (1 bit)  → 0=peso, 1=bias
     // Bits 8-7:   gate      (2 bits) → 00=input, 01=forget, 10=candidate, 11=output
@@ -119,23 +109,7 @@ module lstm_network #(
     logic [2:0] neuron;    // 3 bits (0 a 7)
     logic [2:0] idx;       // 3 bits (0 a 7)
 
-    // ============================================================
-    // FUNÇÃO DE ENDEREÇO (12 bits)
-    // ============================================================
-    function logic [11:0] gen_addr(
-        input logic [1:0] layer,
-        input logic is_bias,
-        input logic [1:0] gate,
-        input logic [2:0] neuron,
-        input logic recurrent,
-        input logic [2:0] idx
-    );
-        gen_addr = {layer, is_bias, gate, neuron, recurrent, idx};
-    endfunction
-
-    // ============================================================
     // START SIGNAL
-    // ============================================================
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
             lstm_start <= 1'b0;
@@ -148,9 +122,7 @@ module lstm_network #(
         end
     end
 
-    // ============================================================
-    // FSM PRINCIPAL (12 bits)
-    // ============================================================
+    // FSM PRINCIPAL (12 bits - SEM FUNCTIONS)
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
             state <= IDLE;
@@ -175,11 +147,9 @@ module lstm_network #(
                     state <= LOAD_LSTM_WX_FORGET;
                 end
 
-                // ============================================================
                 // FORGET GATE (gate 01 - o que funciona)
-                // ============================================================
                 LOAD_LSTM_WX_FORGET: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b01, neuron, 1'b0, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b01, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_FORGET_DATA;
                 end
                 
@@ -201,7 +171,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_FORGET: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b01, neuron, 1'b1, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b01, neuron, 1'b1, idx};
                     state <= LOAD_LSTM_WH_FORGET_DATA;
                 end
                 
@@ -223,7 +193,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_FORGET: begin
-                    addr_internal <= gen_addr(2'b00, 1'b1, 2'b01, neuron, 1'b0, 3'b0);
+                    addr_internal <= {2'b00, 1'b1, 2'b01, neuron, 1'b0, 3'b0};
                     state <= LOAD_LSTM_BIAS_FORGET_DATA;
                 end
                 
@@ -238,11 +208,9 @@ module lstm_network #(
                     end
                 end
 
-                // ============================================================
                 // INPUT GATE (gate 00 - o que funciona)
-                // ============================================================
                 LOAD_LSTM_WX_INPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b00, neuron, 1'b0, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b00, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_INPUT_DATA;
                 end
                 
@@ -264,7 +232,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_INPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b00, neuron, 1'b1, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b00, neuron, 1'b1, idx};
                     state <= LOAD_LSTM_WH_INPUT_DATA;
                 end
                 
@@ -286,7 +254,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_INPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b1, 2'b00, neuron, 1'b0, 3'b0);
+                    addr_internal <= {2'b00, 1'b1, 2'b00, neuron, 1'b0, 3'b0};
                     state <= LOAD_LSTM_BIAS_INPUT_DATA;
                 end
                 
@@ -301,11 +269,9 @@ module lstm_network #(
                     end
                 end
 
-                // ============================================================
                 // CANDIDATE GATE (gate 10)
-                // ============================================================
                 LOAD_LSTM_WX_CELL: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b10, neuron, 1'b0, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b10, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_CELL_DATA;
                 end
                 
@@ -327,7 +293,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_CELL: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b10, neuron, 1'b1, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b10, neuron, 1'b1, idx};
                     state <= LOAD_LSTM_WH_CELL_DATA;
                 end
                 
@@ -349,7 +315,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_CELL: begin
-                    addr_internal <= gen_addr(2'b00, 1'b1, 2'b10, neuron, 1'b0, 3'b0);
+                    addr_internal <= {2'b00, 1'b1, 2'b10, neuron, 1'b0, 3'b0};
                     state <= LOAD_LSTM_BIAS_CELL_DATA;
                 end
                 
@@ -364,11 +330,9 @@ module lstm_network #(
                     end
                 end
 
-                // ============================================================
                 // OUTPUT GATE (gate 11)
-                // ============================================================
                 LOAD_LSTM_WX_OUTPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b11, neuron, 1'b0, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b11, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_OUTPUT_DATA;
                 end
                 
@@ -390,7 +354,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_WH_OUTPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b0, 2'b11, neuron, 1'b1, idx);
+                    addr_internal <= {2'b00, 1'b0, 2'b11, neuron, 1'b1, idx};
                     state <= LOAD_LSTM_WH_OUTPUT_DATA;
                 end
                 
@@ -412,7 +376,7 @@ module lstm_network #(
                 end
                 
                 LOAD_LSTM_BIAS_OUTPUT: begin
-                    addr_internal <= gen_addr(2'b00, 1'b1, 2'b11, neuron, 1'b0, 3'b0);
+                    addr_internal <= {2'b00, 1'b1, 2'b11, neuron, 1'b0, 3'b0};
                     state <= LOAD_LSTM_BIAS_OUTPUT_DATA;
                 end
                 
@@ -427,11 +391,9 @@ module lstm_network #(
                     end
                 end
 
-                // ============================================================
                 // ReLU WEIGHTS (layer = 1)
-                // ============================================================
                 LOAD_RELU_W: begin
-                    addr_internal <= gen_addr(2'b01, 1'b0, 2'b00, neuron, 1'b0, idx);
+                    addr_internal <= {2'b01, 1'b0, 2'b00, neuron, 1'b0, idx};
                     state <= LOAD_RELU_W_DATA;
                 end
                 
@@ -453,7 +415,7 @@ module lstm_network #(
                 end
                 
                 LOAD_RELU_B: begin
-                    addr_internal <= gen_addr(2'b01, 1'b1, 2'b00, neuron, 1'b0, 3'b0);
+                    addr_internal <= {2'b01, 1'b1, 2'b00, neuron, 1'b0, 3'b0};
                     state <= LOAD_RELU_B_DATA;
                 end
                 
@@ -468,11 +430,9 @@ module lstm_network #(
                     end
                 end
 
-                // ============================================================
                 // OUTPUT WEIGHTS (layer = 2)
-                // ============================================================
                 LOAD_OUT_W: begin
-                    addr_internal <= gen_addr(2'b10, 1'b0, 2'b00, 3'b0, 1'b0, idx);
+                    addr_internal <= {2'b10, 1'b0, 2'b00, 3'b0, 1'b0, idx};
                     state <= LOAD_OUT_W_DATA;
                 end
                 
@@ -488,7 +448,7 @@ module lstm_network #(
                 end
                 
                 LOAD_OUT_B: begin
-                    addr_internal <= gen_addr(2'b10, 1'b1, 2'b00, 3'b0, 1'b0, 3'b0);
+                    addr_internal <= {2'b10, 1'b1, 2'b00, 3'b0, 1'b0, 3'b0};
                     state <= LOAD_OUT_B_DATA;
                 end
                 
@@ -497,9 +457,7 @@ module lstm_network #(
                     state <= RUN_LSTM;
                 end
 
-                // ============================================================
                 // EXECUTA LSTM
-                // ============================================================
                 RUN_LSTM: begin
                     ready <= 1'b0;
                     if (lstm_done) begin
@@ -521,9 +479,7 @@ module lstm_network #(
         end
     end
 
-    // ============================================================
     // INSTÂNCIAS DAS CAMADAS
-    // ============================================================
     
     // Camada 1: LSTM
     lstm_layer #(

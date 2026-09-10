@@ -14,15 +14,13 @@ module weight_bank #(
 
     logic signed [WIDTH-1:0] mem [0:MAX_SIZE-1];
 
-    // ============================================================
     // DECODIFICAÇÃO (12 bits)
-    // ============================================================
-    // Bits 11-10: layer     (2 bits) → 0 a 3
-    // Bit  9:     is_bias   (1 bit)  → 0 = peso, 1 = bias
-    // Bits 8-7:   gate      (2 bits) → 0 a 3
-    // Bits 6-4:   neuron    (3 bits) → 0 a 7
-    // Bit  3:     recurrent (1 bit)  → 0 = Wx, 1 = Wh
-    // Bits 2-0:   idx       (3 bits) → 0 a 7
+    // Bits 11-10: layer     (2 bits)  0 a 3
+  	// Bit  9:     is_bias   (1 bit)   0 = peso, 1 = bias
+    // Bits 8-7:   gate      (2 bits)  0 a 3
+    // Bits 6-4:   neuron    (3 bits)  0 a 7
+    // Bit  3:     recurrent (1 bit)   0 = Wx, 1 = Wh
+    // Bits 2-0:   idx       (3 bits)  0 a 7
 
     logic [1:0]  layer;
     logic        is_bias;
@@ -38,7 +36,7 @@ module weight_bank #(
     assign recurrent = addr[3];
     assign idx       = addr[2:0];
 
-    // MAPEAMENTO DOS GATES (MANTIDO O QUE FUNCIONA)
+    // MAPEAMENTO DOS GATES
     // gate:
     // 00 -> input  
     // 01 -> forget 
@@ -53,7 +51,7 @@ module weight_bank #(
         if (rst) begin 
             integer i;
             for (i = 0; i < MAX_SIZE; i++)
-                mem[i] = 0;
+              mem[i] <= 0;
         end
         if (we)
             mem[addr] <= data_in;
