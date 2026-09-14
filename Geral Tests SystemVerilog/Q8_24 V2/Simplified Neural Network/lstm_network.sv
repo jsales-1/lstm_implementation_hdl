@@ -39,12 +39,12 @@ module lstm_network #(
     // PESOS LSTM (limitados para 12 bits)
     // LSTM_HIDDEN = 8, LSTM_INPUTS = 4
     
-    // Forget Gate (gate 01 - o que funciona)
+    // Forget Gate (gate 01)
     logic signed [WIDTH-1:0] lstm_wx_forget [LSTM_HIDDEN][LSTM_INPUTS];
     logic signed [WIDTH-1:0] lstm_wh_forget [LSTM_HIDDEN][LSTM_HIDDEN];
     logic signed [WIDTH-1:0] lstm_bias_forget [LSTM_HIDDEN];
     
-    // Input Gate (gate 00 - o que funciona)
+    // Input Gate (gate 00)
     logic signed [WIDTH-1:0] lstm_wx_input [LSTM_HIDDEN][LSTM_INPUTS];
     logic signed [WIDTH-1:0] lstm_wh_input [LSTM_HIDDEN][LSTM_HIDDEN];
     logic signed [WIDTH-1:0] lstm_bias_input [LSTM_HIDDEN];
