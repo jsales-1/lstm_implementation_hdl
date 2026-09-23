@@ -147,7 +147,7 @@ module lstm_network #(
                     state <= LOAD_LSTM_WX_FORGET;
                 end
 
-                // FORGET GATE (gate 01 - o que funciona)
+                // FORGET GATE (gate 01)
                 LOAD_LSTM_WX_FORGET: begin
                     addr_internal <= {2'b00, 1'b0, 2'b01, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_FORGET_DATA;
@@ -208,7 +208,7 @@ module lstm_network #(
                     end
                 end
 
-                // INPUT GATE (gate 00 - o que funciona)
+                // INPUT GATE (gate 00)
                 LOAD_LSTM_WX_INPUT: begin
                     addr_internal <= {2'b00, 1'b0, 2'b00, neuron, 1'b0, idx};
                     state <= LOAD_LSTM_WX_INPUT_DATA;

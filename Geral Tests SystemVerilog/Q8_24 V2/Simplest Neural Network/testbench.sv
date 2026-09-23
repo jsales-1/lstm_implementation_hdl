@@ -14,7 +14,7 @@ module tb_lstm_network;
     parameter int RELU_NEURONS = 4;
     parameter int OUT_INPUTS   = 4;
     
-    parameter int NUM_FILES = 50;
+    parameter int NUM_FILES = 10000;
     parameter real THRESHOLD = 0.5;
     
     logic clk;
@@ -499,7 +499,7 @@ module tb_lstm_network;
             logic signed [31:0] verilog_result;
             real python_val, verilog_val;
             
-            $sformat(filename, "dados_%0d.mem", file_idx);
+            $sformat(filename, "Small Global Processing/dados_%0d.mem", file_idx);
             
             fd_check = $fopen(filename, "r");
             if (fd_check == 0) begin
