@@ -132,7 +132,6 @@ O testbench executa as seguintes etapas em sequência:
 <ul>
 <li><code>resultados.txt</code> — comparação par a par entre Verilog, Python e ground truth;</li>
 <li><code>resultados_lstm.txt</code> — saída da camada LSTM (todos os neurônios ocultos, último timestep), em ponto flutuante;</li>
-<li><code>lstm_wave.vcd</code> — formas de onda para depuração.</li>
 </ul>
 </li>
 </ol>
@@ -144,7 +143,11 @@ Ao final da simulação, o testbench imprime um relatório com acurácia do Pyth
 <h2>Verificação Baseada em Asserções</h2>
 
 <p align="justify">
+O projeto conta com um conjunto de <b>asserções SystemVerilog (SVA)</b> que verificam invariantes do RTL em tempo de simulação. As asserções estão em <code>Assertions/Q8_24 V2/</code>, organizadas em duas subpastas — <code>Simplest Neural Network/</code> e <code>Simplified Neural Network/</code> — correspondentes aos dois modelos explorados. O conjunto de asserções é o mesmo para ambos; a única diferença é o <code>lstm_network</code> ao qual são vinculadas via <code>bind</code>.
+</p>
 
+<p align="justify">
+O arquivo <code>lstm_assertions.sv</code> verifica o comportamento de reset e clear (garantindo que <code>ready</code> e <code>y_out</code> são zerados corretamente), a sequência do sinal <code>ready</code> (que só pode estar alto em <code>mode = 1</code>, por tempo limitado, e nunca em modo de escrita), os modos de operação (assegurando que <code>we</code> nunca é ativado durante a execução), a validade da saída (quando <code>ready = 1</code>, <code>y_out</code> está em <code>[0, 1]</code> em Q8.24) e a integridade das FSMs do <code>lstm_network</code> (cujo estado deve estar sempre entre os 36 estados válidos de carregamento, execução, espera e conclusão) e do <code>lstm_layer</code> (cujo estado deve ser sempre <code>IDLE</code>, <code>COMPUTE</code> ou <code>DONE</code>). Complementam a verificação cinco covergroups — <code>cg_modes</code>, <code>cg_reset</code>, <code>cg_ready</code>, <code>cg_yout</code> e <code>cg_lstm_state</code> — que registram a ocorrência dos cenários relevantes de operação e as faixas de saída alcançadas durante a simulação.
 </p>
 
 <h2>Comparação entre Python e SystemVerilog</h2>
