@@ -1,0 +1,295 @@
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun	25.03-s001: Started on Oct 07, 2026 at 20:29:15 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+	Top level design units:
+		$unit_0x52bd7246
+		linear_layer
+		tanh_layer
+		tb_lstm_network
+        $display("  Total de amostras: %0d", total_samples);
+                                                         |
+xmelab: *W,REALCV (./lstm_tb.sv,702|57): Real argument converted to integer for (%d).
+        $display("  Erros Python:      %0d (%.2f%%)", total_python_errors, total_python_errors/total_samples*100.0);
+                                                                        |
+xmelab: *W,REALCV (./lstm_tb.sv,703|72): Real argument converted to integer for (%d).
+        $display("  Erros Verilog:     %0d (%.2f%%)", total_verilog_errors, total_verilog_errors/total_samples*100.0);
+                                                                         |
+xmelab: *W,REALCV (./lstm_tb.sv,704|73): Real argument converted to integer for (%d).
+Loading snapshot worklib.linear_layer:sv .................... Done
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> run
+
+LENDO weights.mem
+Li 497 pesos do arquivo
+
+CT1 - RESET
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 15 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+  [PASS] ready == 0 durante reset
+  [FAIL] y_out == 0 durante reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 25 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+  [PASS] ready == 0 apos reset (idle)
+
+CT2 - CARREGAMENTO DE PESOS
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 35 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 55 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 65 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 85 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 95 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+  [PASS] Todos os pesos carregados em enderecos validos
+  [PASS] n_weights > 0
+
+CT3 - EXECUCAO LSTM COM DADOS FIXOS
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 5105 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 5115 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 5135 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 5145 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  y_out = 8388608 (Q8.24) = 0.500000
+  [PASS] ready comecou em 0
+  [PASS] ready foi para 1 ao final
+  [PASS] y_out dentro de [0,1]
+
+CT4 - MODO ESCRITA (mode=0)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 16375 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 16385 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 16405 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 16415 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] ready == 0 em mode=0
+  [PASS] y_out nao muda em mode=0
+
+CT5 - MODO EXECUCAO (mode=1)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 16515 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 16525 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 16545 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 16555 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] ready == 0 antes da execucao
+  [PASS] ready == 1 apos execucao
+  [PASS] y_out dentro de [0,1]
+
+CT6 - VALORES EXTREMOS (Q8.24)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 27785 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 27795 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 27815 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 27825 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] Saida valida com entrada maxima
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 39055 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 39065 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 39085 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 39095 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] Saida valida com entrada minima
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 50325 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 50335 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 50355 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 50365 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] Saida valida com entrada zero
+
+CT7 - MULTIPLAS EXECUCOES CONSECUTIVAS
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 61595 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 61605 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 61625 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 61635 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+  [PASS] Execucao 0 produziu saida valida
+  [PASS] Execucao 1 produziu saida valida
+  [PASS] Execucao 2 produziu saida valida
+  r1=0.500000 r2=0.500000 r3=0.500000
+
+CT8 - RESET DURANTE EXECUCAO ATIVA
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 72885 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 72895 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 72915 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+xmsim: *E,ASRTST (./lstm_assertions.sv,86): (time 72925 NS) Assertion tb_lstm_network.dut.u_assertions.a_clear_yout_zero has failed
+[ASSERT] y_out != 0 durante clear
+[CLEAR] Pulso de clear aplicado (2 ciclos)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 73015 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 73025 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+  [PASS] ready == 0 apos reset no meio da execucao
+
+RELATORIO - TESTES DIRECIONADOS
+  PASS: 19
+  FAIL: 1
+
+COBERTURA FUNCIONAL (contadores)
+-------------------------------------------------------
+  Modos:           escrita=3  execucao=9
+  Reset scenarios: idle=0  processamento=1  pos-reset=1
+  Valores extremos: max=1  min=1  zero=1  sat=1
+  Faixas de saida: prox0=0  prox1=0  intermediario=1
+
+PROCESSANDO ARQUIVO 0: dados_0.mem
+
+LENDO dados de entrada de dados_0.mem
+  Python result: 0x00097bf7 (0.037048)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 73035 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 73055 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 73065 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 0
+  Resultado Verilog: 0 (Q8.24) = 0.000000 (real)
+
+  Python result: 0.037048
+  Verilog result: 0.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 1: dados_1.mem
+
+LENDO dados de entrada de dados_1.mem
+  Python result: 0x00fdee86 (0.991921)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+EXECUTANDO LSTM NETWORK para arquivo 1
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.991921
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 2: dados_2.mem
+
+LENDO dados de entrada de dados_2.mem
+  Python result: 0x00158ff5 (0.084228)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 100535 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 100545 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+EXECUTANDO LSTM NETWORK para arquivo 2
+  Resultado Verilog: 391394 (Q8.24) = 0.023329 (real)
+
+  Python result: 0.084228
+  Verilog result: 0.023329
+  Ground truth:           0
+
+PROCESSANDO ARQUIVO 3: dados_3.mem
+
+LENDO dados de entrada de dados_3.mem
+  Python result: 0x00fef6b1 (0.995952)
+  Ground truth:           1
+Li 480 valores de entrada (esperado: 480)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 111785 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 111795 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+EXECUTANDO LSTM NETWORK para arquivo 3
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000 (real)
+
+  Python result: 0.995952
+  Verilog result: 1.000000
+  Ground truth:           1
+
+PROCESSANDO ARQUIVO 4: dados_4.mem
+
+LENDO dados de entrada de dados_4.mem
+  Python result: 0x000daeca (0.053448)
+  Ground truth:           0
+Li 480 valores de entrada (esperado: 480)
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 123035 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+xmsim: *E,ASRTST (./lstm_assertions.sv,72): (time 123045 NS) Assertion tb_lstm_network.dut.u_assertions.a_reset_yout_zero has failed
+[ASSERT] y_out != 0 apos reset
+EXECUTANDO LSTM NETWORK para arquivo 4
+  Resultado Verilog: 6920004 (Q8.24) = 0.412464 (real)
+
+  Python result: 0.053448
+  Verilog result: 0.412464
+  Ground truth:           0
+
+=========================================================
+RELATORIO FINAL DE VALIDACAO
+=========================================================
+
+Arquivo           | Acert. Python | Acert. Verilog | Ambos Corretos | Ambos Errados | Py Err/Ver Corr | Py Corr/Ver Err
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+dados_0.mem      |          0.00% |          0.00% |             0 |             1 |               0 |               0
+dados_1.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_2.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_3.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+dados_4.mem      |        100.00% |        100.00% |             1 |             0 |               0 |               0
+------------------+---------------+---------------+----------------+---------------+-----------------+----------------
+TOTAIS            |         80.00% |         80.00% |             0 |             0 |               0 |               0
+
+=========================================================
+METRICA DE REGRESSAO (Verilog vs Python)
+=========================================================
+  R2 (Coeficiente de Determinacao): 0.8725
+
+=========================================================
+RESUMO DE CLASSIFICACAO
+=========================================================
+  Total de amostras:           5
+  Erros Python:                1 (20.00%)
+  Erros Verilog:               1 (20.00%)
+  Acuracia Verilog:  80.00%
+
+Arquivo de resultados detalhados: resultados.txt
+=========================================================
+
+Simulação completa!
+Simulation complete via $finish(1) at time 134265 NS + 3
+./lstm_tb.sv:836         $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Oct 07, 2026 at 20:29:43 EDT  (total: 00:00:28)
