@@ -150,8 +150,93 @@ O projeto conta com um conjunto de <b>asserções SystemVerilog (SVA)</b> que ve
 O arquivo <code>lstm_assertions.sv</code> verifica o comportamento de reset e clear (garantindo que <code>ready</code> e <code>y_out</code> são zerados corretamente), a sequência do sinal <code>ready</code> (que só pode estar alto em <code>mode = 1</code>, por tempo limitado, e nunca em modo de escrita), os modos de operação (assegurando que <code>we</code> nunca é ativado durante a execução), a validade da saída (quando <code>ready = 1</code>, <code>y_out</code> está em <code>[0, 1]</code> em Q8.24) e a integridade das FSMs do <code>lstm_network</code> (cujo estado deve estar sempre entre os 36 estados válidos de carregamento, execução, espera e conclusão) e do <code>lstm_layer</code> (cujo estado deve ser sempre <code>IDLE</code>, <code>COMPUTE</code> ou <code>DONE</code>). Complementam a verificação cinco covergroups, <code>cg_modes</code>, <code>cg_reset</code>, <code>cg_ready</code>, <code>cg_yout</code> e <code>cg_lstm_state</code>, que registram a ocorrência dos cenários relevantes de operação e as faixas de saída alcançadas durante a simulação.
 </p>
 
+
 <h2>Comparação entre Python e SystemVerilog</h2>
 
 <p align="justify">
-O diretório <b>Comparing Python and SystemVerilog</b> contém os resultados da comparação entre os modelos implementados em Python e SystemVerilog. Esta comparação permite validar a precisão numérica das operações em ponto fixo e garantir que o hardware produza resultados consistentes com o modelo de referência. Os resultados são organizados por formato numérico (Q8.24 e Q16.16), permitindo avaliar o impacto da escolha do formato na acurácia final da rede.
+O diretório <b>Comparing Python and SystemVerilog</b> contém os resultados da comparação entre os modelos implementados em Python e SystemVerilog. Esta comparação permite validar a precisão numérica das operações em ponto fixo e garantir que o hardware produza resultados consistentes com o modelo de referência. Os resultados são organizados por formato numérico (Q8.24 e Q16.16) e, dentro de cada formato, pelos dois modelos explorados (Simplest e Simplified).
+</p>
+
+<h3>Simplest Neural Network (Q8.24)</h3>
+
+<p align="justify">
+O modelo <b>Simplest</b>, composto por 5 tokens, 2 neurônios LSTM, 4 neurônios ReLU e 1 neurônio sigmoide, foi o primeiro a ser comparado. A matriz de confusão abaixo apresenta os resultados lado a lado entre Verilog e Python, ambos com acurácia de aproximadamente 71%:
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplest_cm.png" alt="Matriz de confusão Simplest" width="800">
+</p>
+
+<p align="justify">
+A matriz mostra que o número de acertos e erros é praticamente idêntico entre as duas implementações. O Verilog classificou corretamente 3266 amostras como "Negative" e 3837 como "Positive", enquanto o Python obteve 3268 e 3839, respectivamente. As diferenças são de apenas 2 amostras em cada classe, o que indica alta concordância entre o hardware e o modelo de referência.
+</p>
+
+<p align="justify">
+Os histogramas das saídas permitem observar a distribuição das probabilidades geradas por cada implementação:
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplest_histograms.png" alt="Histograma Simplest" width="800">
+</p>
+
+<p align="justify">
+Ambas as distribuições apresentam o mesmo padrão: uma concentração de amostras próximas de 0 (classificadas como "Negative") e outra próxima de 0,7 (classificadas como "Positive"), com poucos valores na região intermediária. O formato geral dos histogramas é equivalente, confirmando que o hardware reproduz o comportamento do modelo Python. Nota-se ainda um pequeno acúmulo de amostras em torno de 0,5. Esse comportamento é esperado e decorre da saturação da função sigmoide implementada em hardware: para entradas muito negativas, a aproximação polinomial por série de Taylor combinada ao mecanismo de clamp produz valores em torno de 0,5, enquanto no modelo Python esses mesmos valores tenderiam a zero.
+</p>
+
+<p align="justify">
+Por fim, o gráfico de dispersão abaixo relaciona diretamente as saídas de Python (eixo X) e Verilog (eixo Y):
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplest_r2_scatter.png" alt="Scatter plot Simplest" width="700">
+</p>
+
+<p align="justify">
+A linha tracejada vermelha representa a correspondência perfeita (y = x). A maior parte dos pontos está alinhada a essa linha, resultando em um coeficiente de determinação <b>R² = 0,9385</b>, valor que indica alta correlação entre as saídas. Os desvios mais visíveis ocorrem em valores baixos de saída, onde a quantização em Q8.24 e as aproximações polinomiais das funções de ativação introduzem pequenos erros. Ainda assim, esses desvios não comprometem a classificação final, como mostrado pela matriz de confusão.
+</p>
+
+<p align="justify">
+O plano de verificação do projeto define <b>R² ≥ 0,9</b> como critério de aceitação para a concordância entre o hardware e o modelo de referência. O valor obtido para o modelo Simplest em Q8.24 (<b>R² = 0,9385</b>) atende a esse critério, confirmando que a implementação em hardware produz resultados equivalentes ao modelo em Python, tanto em termos de acurácia final quanto na distribuição das probabilidades geradas.
+</p>
+
+<h3>Simplified Neural Network (Q8.24)</h3>
+
+<p align="justify">
+O modelo <b>Simplified</b>, composto por 120 tokens, 8 neurônios LSTM, 8 neurônios ReLU e 1 neurônio sigmoide, é a versão que mais se aproxima do comportamento do modelo original em software. A matriz de confusão abaixo apresenta os resultados lado a lado entre Verilog e Python, com acurácia de 87,56% e 87,53%, respectivamente:
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplified_cm.png" alt="Matriz de confusão Simplified" width="800">
+</p>
+
+<p align="justify">
+A matriz mostra que as duas implementações produziram resultados quase idênticos. O Verilog classificou corretamente 4103 amostras como "Negative" e 4653 como "Positive", enquanto o Python obteve 4103 e 4650, respectivamente. As diferenças são de apenas 3 amostras na classe "Positive", o que confirma a alta concordância entre hardware e modelo de referência mesmo em uma rede maior.
+</p>
+
+<p align="justify">
+Os histogramas das saídas permitem observar a distribuição das probabilidades geradas por cada implementação:
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplified_histograms.png" alt="Histograma Simplified" width="800">
+</p>
+
+<p align="justify">
+Ambas as distribuições concentram a maior parte das amostras próximas de 0 (classificadas como "Negative") e de 1,0 (classificadas como "Positive"), com poucos valores na região intermediária. O comportamento é semelhante ao observado no modelo Simplest, incluindo o acúmulo em torno de 0,5 que, novamente, decorre da saturação da função sigmoide em hardware. A principal diferença em relação ao Simplest é que, no Simplified, as saídas positivas saturam em 1,0 (em vez de 0,7), refletindo a maior confiança do modelo com mais neurônios e mais tokens.
+</p>
+
+<p align="justify">
+Por fim, o gráfico de dispersão abaixo relaciona diretamente as saídas de Python (eixo X) e Verilog (eixo Y):
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplified_r2_scatter.png" alt="Scatter plot Simplified" width="700">
+</p>
+
+<p align="justify">
+A linha tracejada vermelha representa a correspondência perfeita (y = x). A maior parte dos pontos está alinhada a essa linha, resultando em um coeficiente de determinação <b>R² = 0,9023</b>. Os desvios mais visíveis ocorrem em valores baixos de saída e em dois agrupamentos verticais: um em torno de Python ≈ 0,1 (onde o Verilog produz valores entre 0,35 e 0,5) e outro em torno de Python ≈ 0,95 (onde o Verilog produz valores entre 0,5 e 0,65). Esses agrupamentos são consequência direta da saturação da sigmoide e do truncamento em Q8.24 para entradas muito negativas ou muito positivas.
+</p>
+
+<p align="justify">
+Apesar desses desvios, o valor obtido para o modelo Simplified em Q8.24 (<b>R² = 0,9023</b>) atende ao critério de aceitação definido no plano de verificação (<b>R² ≥ 0,9</b>), confirmando que mesmo a rede de maior porte mantém resultados equivalentes ao modelo Python.
 </p>
