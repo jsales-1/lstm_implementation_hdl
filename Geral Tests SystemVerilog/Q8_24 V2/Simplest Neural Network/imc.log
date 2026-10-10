@@ -1,0 +1,4 @@
+IMC(64): 26.03-s030: (c) Copyright 1995-2026 Cadence Design Systems Inc - Simulator version: 26.03-s005 - Coverage engine version: 26.03-s005
+Starting gui mode
+imc: *I,RUNLD: Successfully loaded run /prj/ci/workarea/aluno6/Verilog/lstm_implementation_hdl-main/Geral Tests SystemVerilog/Q8_24 V2/Simplest Neural Network/cov_work/scope/test.
+imc: *I,RUNLD: Successfully loaded run /prj/ci/workarea/aluno6/Verilog/lstm_implementation_hdl-main/Geral Tests SystemVerilog/Q8_24 V2/Simplified Neural Network/cov_work/scope/test.
