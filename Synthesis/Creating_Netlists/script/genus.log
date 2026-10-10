@@ -1,0 +1,138 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[18:08:07.360385] Configured Lic search path (22.01-s003): 5280@192.168.2.250
+
+Version: 22.16-s078_1, built Mon Jun 10 10:32:57 PDT 2024
+Options: 
+Date:    Wed Sep 09 18:08:07 2026
+Host:    saitama (x86_64 w/Linux 4.18.0-553.el8_10.x86_64) (16cores*16cpus*1physical cpu*Common KVM processor 16384KB) (263594812KB)
+PID:     1512998
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+Checking out license: Genus_Synthesis
+[18:08:07.467059] Periodic Lic check successful
+[18:08:07.467066] Feature usage summary:
+[18:08:07.467066] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (10 seconds elapsed).
+
+WARNING: This version of the tool is 821 days old.
+@genus:root: 1> source lstm_simplified.tcl
+Sourcing './lstm_simplified.tcl' (Wed Sep 09 18:08:23 -03 2026)...
+#@ Begin verbose source ./lstm_simplified.tcl
+@file(lstm_simplified.tcl) 2: set USER aluno6
+@file(lstm_simplified.tcl) 3: set PROJECT_DIR /prj/ci/workarea/aluno6/Verilog/TCC/lstm_implementation_hdl-main/Synthesis/Creating_Netlists
+@file(lstm_simplified.tcl) 4: set TECH_DIR /pdk/gpdk045
+@file(lstm_simplified.tcl) 5: set HDL_NAME "lstm_network"
+@file(lstm_simplified.tcl) 7: set HDL_FILES [list \
+    ${PROJECT_DIR}/RTL/Simplified/lstm_network.sv \
+    ${PROJECT_DIR}/RTL/Simplified/lstm.sv \
+    ${PROJECT_DIR}/RTL/Simplified/linear_layer.sv \
+    ${PROJECT_DIR}/RTL/Simplified/relu_layer.sv \
+    ${PROJECT_DIR}/RTL/Simplified/sigmoid_layer.sv \
+    ${PROJECT_DIR}/RTL/Simplified/tanh_layer.sv \
+    ${PROJECT_DIR}/RTL/Simplified/regbank.sv \
+]
+@file(lstm_simplified.tcl) 17: set LIB_DIR ${TECH_DIR}/gsclib045_svt_v4.7/gsclib045/timing
+@file(lstm_simplified.tcl) 18: set BEST_LIST {fast_vdd1v2_basicCells.lib}
+@file(lstm_simplified.tcl) 20: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(lstm_simplified.tcl) 22: set_db [get_db hinsts top/* -match_hier] .ungroup_ok false
+@file(lstm_simplified.tcl) 24: set_db init_hdl_search_path "${PROJECT_DIR}"
+  Setting attribute of root '/': 'init_hdl_search_path' = /prj/ci/workarea/aluno6/Verilog/TCC/lstm_implementation_hdl-main/Synthesis/Creating_Netlists
+@file(lstm_simplified.tcl) 25: set_db lib_search_path "${LIB_DIR}"
+  Setting attribute of root '/': 'lib_search_path' = /pdk/gpdk045/gsclib045_svt_v4.7/gsclib045/timing
+@file(lstm_simplified.tcl) 26: set_db library "${BEST_LIST}"
+
+  Message Summary for Library fast_vdd1v2_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast_vdd1v2_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+  Setting attribute of root '/': 'library' = fast_vdd1v2_basicCells.lib
+@file(lstm_simplified.tcl) 28: read_hdl -sv ${HDL_FILES}
+    function logic [11:0] gen_addr(
+                 |
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/prj/ci/workarea/aluno6/Verilog/TCC/lstm_implementation_hdl-main/Synthesis/Creating_Netlists/RTL/Simplified/lstm_network.sv' on line 125, column 18.
+        : Use the 'automatic' keyword for declaring functions and tasks.
+@file(lstm_simplified.tcl) 31: elaborate ${HDL_NAME}
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'lstm_network' from file '/prj/ci/workarea/aluno6/Verilog/TCC/lstm_implementation_hdl-main/Synthesis/Creating_Netlists/RTL/Simplified/lstm_network.sv'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'lstm_network' with default parameters value.
+Error   : Assignments to a particular variable within a always block should be either all blocking or all non-blocking. [CDFG-826] [elaborate]
+        : Assignment to 'mem[4095]' in file '/prj/ci/workarea/aluno6/Verilog/TCC/lstm_implementation_hdl-main/Synthesis/Creating_Netlists/RTL/Simplified/regbank.sv' on line 56.
+        :  
+Info    : Unable to elaborate the design. [ELAB-4]
+        : Module 'lstm_network' contains errors and cannot be elaborated.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+#@ End verbose source ./lstm_simplified.tcl
+1
+@genus:root: 2> exit
+
+Lic Summary:
+[18:17:17.084691] Cdslmd servers: licserver
+[18:17:17.084699] Feature usage summary:
+[18:17:17.084699] Genus_Synthesis
+
+Normal exit.

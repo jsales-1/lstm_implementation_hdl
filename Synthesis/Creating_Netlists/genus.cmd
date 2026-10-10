@@ -1,0 +1,10 @@
+# Cadence Genus(TM) Synthesis Solution, Version 22.16-s078_1, built Jun 10 2024 14:32:57
+
+# Date: Wed Sep 23 19:29:52 2026
+# Host: saitama (x86_64 w/Linux 4.18.0-553.el8_10.x86_64) (16cores*16cpus*1physical cpu*Common KVM processor 16384KB)
+# OS:   Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+ls
+cd script
+source lstm_simplest.tcl
+exit

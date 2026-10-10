@@ -1,0 +1,183 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[19:37:57.360449] Configured Lic search path (22.01-s003): 5280@192.168.2.250
+
+Version: 22.16-s078_1, built Mon Jun 10 10:32:57 PDT 2024
+Options: 
+Date:    Tue Oct 06 19:37:57 2026
+Host:    saitama (x86_64 w/Linux 4.18.0-553.el8_10.x86_64) (43cores*86cpus*2physical cpus*Common KVM processor 16384KB) (792056436KB)
+PID:     124776
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+Checking out license: Genus_Synthesis
+[19:37:57.494387] Periodic Lic check successful
+[19:37:57.494394] Feature usage summary:
+[19:37:57.494394] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (0 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (10 seconds elapsed).
+
+WARNING: This version of the tool is 848 days old.
+@genus:root: 1> cd script
+@genus:root: 2> ls
+Images
+fv
+genus.cmd
+genus.cmd1
+genus.cmd2
+genus.log
+genus.log1
+genus.log2
+gui_show_simplest.tcl
+lstm_simplest.tcl
+lstm_simplified.tcl
+master_i2c_open_netlist_genus (copy).tcl
+reports_simplest_lstm
+reports_simplified_lstm
+ungroup.tcl
+@genus:root: 3> source gui_show_simplest.tcl
+Sourcing './gui_show_simplest.tcl' (Tue Oct 06 19:41:45 -03 2026)...
+#@ Begin verbose source ./gui_show_simplest.tcl
+@file(gui_show_simplest.tcl) 7: set USER aluno6
+@file(gui_show_simplest.tcl) 8: set PROJECT_DIR /prj/ci/workarea/${USER}/Verilog/i2c_implementation_hdl-main/Synthesis
+@file(gui_show_simplest.tcl) 9: set TECH_DIR /pdk/gpdk045
+@file(gui_show_simplest.tcl) 12: set HDL_NAME "i2c_master_controller"
+@file(gui_show_simplest.tcl) 13: set NETLIST_FILE ${PROJECT_DIR}/Netlists/i2c_master_controller.v
+@file(gui_show_simplest.tcl) 14: set LIB_DIR ${TECH_DIR}/gsclib045_svt_v4.7/gsclib045/timing
+@file(gui_show_simplest.tcl) 15: set BEST_LIST {fast_vdd1v2_basicCells.lib}
+@file(gui_show_simplest.tcl) 18: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(gui_show_simplest.tcl) 20: set_db [get_db hinsts top/* -match_hier] .ungroup_ok false
+@file(gui_show_simplest.tcl) 23: set_db lib_search_path "${LIB_DIR}"
+  Setting attribute of root '/': 'lib_search_path' = /pdk/gpdk045/gsclib045_svt_v4.7/gsclib045/timing
+@file(gui_show_simplest.tcl) 24: set_db library "${BEST_LIST}"
+
+  Message Summary for Library fast_vdd1v2_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast_vdd1v2_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+  Setting attribute of root '/': 'library' = fast_vdd1v2_basicCells.lib
+@file(gui_show_simplest.tcl) 27: read_hdl -v2001 ${NETLIST_FILE}
+@file(gui_show_simplest.tcl) 29: elaborate ${HDL_NAME}
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'i2c_master_controller' from file '/prj/ci/workarea/aluno6/Verilog/i2c_implementation_hdl-main/Synthesis/Netlists/i2c_master_controller.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'i2c_master_controller'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: i2c_master_controller, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: i2c_master_controller, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: i2c_master_controller, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: i2c_master_controller, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(gui_show_simplest.tcl) 31: check_design -unresolved ${HDL_NAME}
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'i2c_master_controller'
+
+No empty modules in design 'i2c_master_controller'
+
+  Done Checking the design.
+@file(gui_show_simplest.tcl) 33: gui_show
+#@ End verbose source ./gui_show_simplest.tcl
+
+Lic Summary:
+[19:41:58.194905] Cdslmd servers: licserver
+[19:41:58.194912] Feature usage summary:
+[19:41:58.194912] Genus_Synthesis
+
+Normal exit.

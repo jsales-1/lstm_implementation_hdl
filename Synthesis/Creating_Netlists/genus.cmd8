@@ -1,0 +1,9 @@
+# Cadence Genus(TM) Synthesis Solution, Version 22.16-s078_1, built Jun 10 2024 14:32:57
+
+# Date: Fri Oct 09 19:19:08 2026
+# Host: saitama (x86_64 w/Linux 4.18.0-553.el8_10.x86_64) (16cores*16cpus*1physical cpu*Common KVM processor 16384KB)
+# OS:   Rocky Linux release 8.10 (Green Obsidian)
+
+ls
+cd script
+source gui_show_simplified.tcl
