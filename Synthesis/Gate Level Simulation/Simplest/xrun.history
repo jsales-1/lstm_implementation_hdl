@@ -1,0 +1,26 @@
+s1(23Sep2026:19:52:04):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s2(23Sep2026:19:55:56):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s3(23Sep2026:19:56:15):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s4(23Sep2026:20:01:23):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s5(23Sep2026:20:03:42):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s6(23Sep2026:20:07:11):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s7(06Oct2026:18:49:10):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s8(06Oct2026:18:51:07):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s9(06Oct2026:18:51:19):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.sv 
+s10(06Oct2026:18:52:56):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.sv 
+s11(06Oct2026:18:53:55):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s12(06Oct2026:18:54:37):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s13(06Oct2026:18:56:35):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s14(06Oct2026:19:01:26):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s15(06Oct2026:19:08:32):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s16(06Oct2026:19:15:35):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s17(06Oct2026:19:18:09):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s18(06Oct2026:19:20:01):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s19(06Oct2026:20:17:51):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+s20(06Oct2026:20:30:21):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+#e21(08Oct2026:19:10:53): source ./xcelium.d/env.d/env.history.08Oct2026_19_10_53
+s21(08Oct2026:19:10:53):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+#e22(08Oct2026:19:14:58): source ./xcelium.d/env.d/env.history.08Oct2026_19_14_58
+s22(08Oct2026:19:14:58):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
+#e23(08Oct2026:19:19:21): source ./xcelium.d/env.d/env.history.08Oct2026_19_19_21
+s23(08Oct2026:19:19:21):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplest.v 
