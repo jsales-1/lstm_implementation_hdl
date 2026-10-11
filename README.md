@@ -227,3 +227,34 @@ A linha tracejada vermelha representa a correspondência perfeita (y = x). A mai
 <p align="justify">
 Apesar desses desvios, o valor obtido para o modelo Simplified em Q8.24 (<b>R² = 0,9023</b>) atende ao critério de aceitação definido no plano de verificação (<b>R² ≥ 0,9</b>), confirmando que mesmo a rede de maior porte mantém resultados equivalentes ao modelo Python.
 </p>
+<h2>Síntese e Relatórios</h2>
+
+<p align="justify">
+O processo de síntese foi realizado utilizando o Cadence Genus, com os scripts de síntese disponíveis no diretório <code>Synthesis/Creating_Netlists/script/</code>. Os arquivos <code>lstm_simplest.tcl</code> e <code>lstm_simplified.tcl</code> contêm a configuração completa de síntese para os modelos Simplest e Simplified, respectivamente, e podem ser executados no Genus por meio do comando <code>source</code>. Para a visualização gráfica das netlists geradas, os scripts <code>gui_show_simplest.tcl</code> e <code>gui_show_simplified.tcl</code> abrem a interface gráfica do Genus com a netlist correspondente já carregada. As restrições utilizadas durante a síntese, incluindo a definição de clock e os atrasos de entrada e saída, estão disponíveis no arquivo de constraints acessível em <code>Synthesis/Creating_Netlists/constraints/</code>. A tecnologia alvo foi a biblioteca de células de 45 nm da Nangate.
+</p>
+
+<p align="justify">
+Os relatórios de síntese resultantes estão organizados nas subpastas <code>report_simplest</code> e <code>report_simplified</code>, também localizadas sob o diretório <code>script/</code>. Cada pasta contém os relatórios gerados para área (<code>report_area.rpt</code>), potência (<code>report_power.rpt</code>), timing (<code>report_timing.rpt</code>) e qualidade geral dos resultados (<code>report_qor.rpt</code>). Esses relatórios fornecem uma análise detalhada de Power, Performance e Area (PPA) do design sintetizado, permitindo avaliar a viabilidade da implementação e orientar possíveis otimizações no RTL antes de prosseguir para o projeto físico.
+</p>
+
+<p align="justify">
+O fluxo de síntese depende de arquivos de tecnologia proprietários e bibliotecas de células padrão que não estão incluídos neste repositório. Para executar com sucesso os scripts TCL fornecidos, o usuário deve ter acesso às bibliotecas compatíveis com o Cadence, incluindo as bibliotecas de células padrão <code>fast_vdd1v0_basicCells</code> e <code>slow_vdd1v0_basicCells</code> (ambos os arquivos <code>.lib</code> e os correspondentes <code>.v</code> em Verilog), bem como os arquivos de tecnologia LEF <code>gsclib045_macro.lef</code> e <code>gsclib045_tech.lef</code>. Esses arquivos devem ser obtidos separadamente (por exemplo, a partir de uma distribuição acadêmica ou licenciada, como a biblioteca Nangate 45 nm) e colocados manualmente nos diretórios apropriados sob <code>Synthesis/Creating_Netlists/</code>. Devido a restrições de licenciamento, esses recursos não podem ser redistribuídos como parte deste repositório.
+</p>
+
+<h3>Análise Geral dos Resultados</h3>
+
+<p align="justify">
+Os dois modelos foram sintetizados com sucesso para um período de clock de 10 ns, o que corresponde a uma frequência de operação de 100 MHz, sem violações de setup em nenhum dos casos. Tanto o Simplest quanto o Simplified apresentaram slack de 0,0 ps e TNS de 0,0, o que indica que o caminho crítico fecha exatamente no limite do período especificado, sem margem positiva. O caminho crítico em ambos os casos está inteiramente dentro de um único neurônio LSTM, passando pelas etapas de MAC, árvores de soma CSA, multiplicadores e blocos de ativação sigmoide e tanh. Como a estrutura interna do neurônio é a mesma nos dois modelos, o caminho crítico não cresce com o aumento do número de neurônios ou de timesteps, o que explica por que o Simplified, com quatro vezes mais neurônios LSTM e 24 vezes mais timesteps, fecha no mesmo período do Simplest. Isso mostra que a profundidade lógica do neurônio é o fator determinante do timing, e não o tamanho total da rede.
+</p>
+
+<p align="justify">
+Em termos de área, o Simplified ocupa aproximadamente 6,38 mm², cerca de 2,94 vezes a área do Simplest, que fica em torno de 2,17 mm². Esse crescimento vem de três fatores combinados: o número de neurônios LSTM passou de 2 para 8, o número de entradas de cada MAC passou de 6 para 12 por causa do vetor de entrada maior, e o número de timesteps subiu de 5 para 120. O lstm_inst concentra a maior parte da área nos dois modelos, com 36,9 por cento no Simplest e 72,3 por cento no Simplified, enquanto o weight_bank permanece praticamente constante, em torno de 1,27 mm², porque seu tamanho é fixo pela configuração MAX_SIZE4096. A relu_inst e a out_inst têm participação pequena em ambos os casos, somando menos de 5 por cento da área total.
+</p>
+
+<p align="justify">
+Em potência, o Simplified consome aproximadamente 453,4 mW, cerca de três vezes o consumo do Simplest, que fica em torno de 150,3 mW. O leakage é baixo nos dois modelos, representando 0,17 por cento do total, o que é compatível com a biblioteca de 1,32 V e 0 °C. A diferença mais relevante está na distribuição entre registradores e lógica combinacional: no Simplest, os registradores respondem por 41,66 por cento do consumo e a lógica por 58,34 por cento, enquanto no Simplified os registradores caem para 15,35 por cento e a lógica sobe para 84,65 por cento. Esse contraste mostra que o aumento do tamanho da rede se traduz quase inteiramente em mais lógica combinacional, e não em mais registradores, o que é coerente com a estrutura da LSTM, onde o estado recorrente é armazenado em um conjunto relativamente pequeno de registradores enquanto as operações de multiplicação e soma se expandem em árvores combinacionais profundas. Comparando a contagem de instâncias, o número de instâncias sequenciais cresceu apenas 10,6 por cento, de 133.661 para 147.805, enquanto o número de instâncias combinacionais cresceu 300,3 por cento, de 661.446 para 2.647.988.
+</p>
+
+<p align="justify">
+De forma geral, os resultados de síntese mostram que a implementação é viável em 100 MHz para os dois modelos, com o Simplified mantendo a mesma frequência do Simplest apesar do aumento expressivo de complexidade. O custo desse crescimento aparece principalmente em área e potência, que escalam de forma aproximadamente proporcional ao número de neurônios e ao número de timesteps, enquanto o timing permanece estável porque o caminho crítico está confinado à estrutura interna de um único neurônio. Essa característica é relevante para o projeto, porque indica que otimizações de timing devem focar na profundidade lógica do neurônio, e não no tamanho da rede, enquanto otimizações de área e potência podem se beneficiar de técnicas como compartilhamento de multiplicadores, redução de precisão ou clock gating.
+</p>
