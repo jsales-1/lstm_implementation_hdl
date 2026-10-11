@@ -1,0 +1,2834 @@
+xrun: 26.03-s005: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun	26.03-s005: Started on Oct 08, 2026 at 20:24:31 -03
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sv
+	-access +rw
+	slow_vdd1v0_basiccells.v
+	lstm_simplified.v
+	test_simplified.v
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmvlog: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+  DFFHQX1 \mem_reg[813][18] (.CK (clk), .D (n_2368202), .Q
+                                                          |
+xmvlog: *W,SMFMAX (lstm_simplified.v,524293|58): Reached maximum source line for debugging purposes.
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmelab: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+	Top level design units:
+		worklib.TLATXL:v (module)
+		worklib.TLATX4:v (module)
+		worklib.TLATX2:v (module)
+		worklib.TLATX1:v (module)
+		worklib.TLATSRXL:v (module)
+		worklib.TLATSRX4:v (module)
+		worklib.TLATSRX2:v (module)
+		worklib.TLATSRX1:v (module)
+		worklib.TLATNXL:v (module)
+		worklib.TLATNX4:v (module)
+		worklib.TLATNX2:v (module)
+		worklib.TLATNX1:v (module)
+		worklib.TLATNTSCAX8_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX8_STATETABLE1:v (module)
+		worklib.TLATNTSCAX8_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX8_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX8:v (module)
+		worklib.TLATNTSCAX6_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX6_STATETABLE1:v (module)
+		worklib.TLATNTSCAX6_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX6_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX6:v (module)
+		worklib.TLATNTSCAX4_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX4_STATETABLE1:v (module)
+		worklib.TLATNTSCAX4_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX4_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX4:v (module)
+		worklib.TLATNTSCAX3_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX3_STATETABLE1:v (module)
+		worklib.TLATNTSCAX3_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX3_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX3:v (module)
+		worklib.TLATNTSCAX20_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX20_STATETABLE1:v (module)
+		worklib.TLATNTSCAX20_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX20_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX20:v (module)
+		worklib.TLATNTSCAX2_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX2_STATETABLE1:v (module)
+		worklib.TLATNTSCAX2_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX2_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX2:v (module)
+		worklib.TLATNTSCAX16_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX16_STATETABLE1:v (module)
+		worklib.TLATNTSCAX16_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX16_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX16:v (module)
+		worklib.TLATNTSCAX12_STATETABLE_UDP1:v (module)
+		worklib.TLATNTSCAX12_STATETABLE1:v (module)
+		worklib.TLATNTSCAX12_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNTSCAX12_STATETABLE_invout1:v (module)
+		worklib.TLATNTSCAX12:v (module)
+		worklib.TLATNSRXL:v (module)
+		worklib.TLATNSRX4:v (module)
+		worklib.TLATNSRX2:v (module)
+		worklib.TLATNSRX1:v (module)
+		worklib.TLATNCAX8_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX8_STATETABLE1:v (module)
+		worklib.TLATNCAX8_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX8_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX8:v (module)
+		worklib.TLATNCAX6_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX6_STATETABLE1:v (module)
+		worklib.TLATNCAX6_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX6_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX6:v (module)
+		worklib.TLATNCAX4_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX4_STATETABLE1:v (module)
+		worklib.TLATNCAX4_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX4_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX4:v (module)
+		worklib.TLATNCAX3_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX3_STATETABLE1:v (module)
+		worklib.TLATNCAX3_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX3_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX3:v (module)
+		worklib.TLATNCAX20_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX20_STATETABLE1:v (module)
+		worklib.TLATNCAX20_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX20_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX20:v (module)
+		worklib.TLATNCAX2_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX2_STATETABLE1:v (module)
+		worklib.TLATNCAX2_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX2_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX2:v (module)
+		worklib.TLATNCAX16_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX16_STATETABLE1:v (module)
+		worklib.TLATNCAX16_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX16_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX16:v (module)
+		worklib.TLATNCAX12_STATETABLE_UDP1:v (module)
+		worklib.TLATNCAX12_STATETABLE1:v (module)
+		worklib.TLATNCAX12_STATETABLE_UDP_invout1:v (module)
+		worklib.TLATNCAX12_STATETABLE_invout1:v (module)
+		worklib.TLATNCAX12:v (module)
+		worklib.TIELO:v (module)
+		worklib.TIEHI:v (module)
+		worklib.TBUFXL:v (module)
+		worklib.TBUFX8:v (module)
+		worklib.TBUFX6:v (module)
+		worklib.TBUFX4:v (module)
+		worklib.TBUFX3:v (module)
+		worklib.TBUFX20:v (module)
+		worklib.TBUFX2:v (module)
+		worklib.TBUFX16:v (module)
+		worklib.TBUFX12:v (module)
+		worklib.TBUFX1:v (module)
+		worklib.SMDFFHQX8:v (module)
+		worklib.SMDFFHQX4:v (module)
+		worklib.SMDFFHQX2:v (module)
+		worklib.SMDFFHQX1:v (module)
+		worklib.SEDFFXL:v (module)
+		worklib.SEDFFX4:v (module)
+		worklib.SEDFFX2:v (module)
+		worklib.SEDFFX1:v (module)
+		worklib.SEDFFTRXL:v (module)
+		worklib.SEDFFTRX4:v (module)
+		worklib.SEDFFTRX2:v (module)
+		worklib.SEDFFTRX1:v (module)
+		worklib.SEDFFHQX8:v (module)
+		worklib.SEDFFHQX4:v (module)
+		worklib.SEDFFHQX2:v (module)
+		worklib.SEDFFHQX1:v (module)
+		worklib.SDFFXL:v (module)
+		worklib.SDFFX4:v (module)
+		worklib.SDFFX2:v (module)
+		worklib.SDFFX1:v (module)
+		worklib.SDFFTRXL:v (module)
+		worklib.SDFFTRX4:v (module)
+		worklib.SDFFTRX2:v (module)
+		worklib.SDFFTRX1:v (module)
+		worklib.SDFFSXL:v (module)
+		worklib.SDFFSX4:v (module)
+		worklib.SDFFSX2:v (module)
+		worklib.SDFFSX1:v (module)
+		worklib.SDFFSRXL:v (module)
+		worklib.SDFFSRX4:v (module)
+		worklib.SDFFSRX2:v (module)
+		worklib.SDFFSRX1:v (module)
+		worklib.SDFFSRHQX8:v (module)
+		worklib.SDFFSRHQX4:v (module)
+		worklib.SDFFSRHQX2:v (module)
+		worklib.SDFFSRHQX1:v (module)
+		worklib.SDFFSHQX8:v (module)
+		worklib.SDFFSHQX4:v (module)
+		worklib.SDFFSHQX2:v (module)
+		worklib.SDFFSHQX1:v (module)
+		worklib.SDFFRXL:v (module)
+		worklib.SDFFRX4:v (module)
+		worklib.SDFFRX2:v (module)
+		worklib.SDFFRX1:v (module)
+		worklib.SDFFRHQX8:v (module)
+		worklib.SDFFRHQX2:v (module)
+		worklib.SDFFQXL:v (module)
+		worklib.SDFFNSRXL:v (module)
+		worklib.SDFFNSRX4:v (module)
+		worklib.SDFFNSRX2:v (module)
+		worklib.SDFFNSRX1:v (module)
+		worklib.SDFFHQX8:v (module)
+		worklib.SDFFHQX2:v (module)
+		worklib.SDFFHQX1:v (module)
+		worklib.OR4X8:v (module)
+		worklib.OR4X6:v (module)
+		worklib.OR4X4:v (module)
+		worklib.OR4X2:v (module)
+		worklib.OR3X8:v (module)
+		worklib.OR3X6:v (module)
+		worklib.OR3X4:v (module)
+		worklib.OR3X2:v (module)
+		worklib.OAI33XL:v (module)
+		worklib.OAI33X4:v (module)
+		worklib.OAI33X2:v (module)
+		worklib.OAI32X4:v (module)
+		worklib.OAI32X2:v (module)
+		worklib.OAI222X4:v (module)
+		worklib.OAI221X4:v (module)
+		worklib.NOR4X8:v (module)
+		worklib.NOR4X6:v (module)
+		worklib.NOR4BBXL:v (module)
+		worklib.NOR4BBX4:v (module)
+		worklib.NOR4BBX2:v (module)
+		worklib.NOR3X8:v (module)
+		worklib.NAND4X8:v (module)
+		worklib.NAND4X6:v (module)
+		worklib.NAND4X4:v (module)
+		worklib.NAND4BX4:v (module)
+		worklib.NAND4BBX4:v (module)
+		worklib.NAND4BBX2:v (module)
+		worklib.MXI4XL:v (module)
+		worklib.MXI4X4:v (module)
+		worklib.MXI4X2:v (module)
+		worklib.MXI4X1:v (module)
+		worklib.MXI3XL:v (module)
+		worklib.MXI3X4:v (module)
+		worklib.MXI3X2:v (module)
+		worklib.MXI3X1:v (module)
+		worklib.MX4XL:v (module)
+		worklib.MX4X4:v (module)
+		worklib.MX4X2:v (module)
+		worklib.MX4X1:v (module)
+		worklib.MX3X4:v (module)
+		worklib.MX3X2:v (module)
+		worklib.MX3X1:v (module)
+		worklib.MX2X8:v (module)
+		worklib.MX2X6:v (module)
+		worklib.MX2X4:v (module)
+		worklib.INVX20:v (module)
+		worklib.INVX16:v (module)
+		worklib.INVX12:v (module)
+		worklib.HOLDX1:v (module)
+		worklib.EDFFXL:v (module)
+		worklib.EDFFX4:v (module)
+		worklib.EDFFX2:v (module)
+		worklib.EDFFX1:v (module)
+		worklib.EDFFTRXL:v (module)
+		worklib.EDFFTRX4:v (module)
+		worklib.EDFFTRX2:v (module)
+		worklib.EDFFTRX1:v (module)
+		worklib.EDFFHQX8:v (module)
+		worklib.EDFFHQX4:v (module)
+		worklib.EDFFHQX2:v (module)
+		worklib.EDFFHQX1:v (module)
+		worklib.DLY4X4:v (module)
+		worklib.DLY4X1:v (module)
+		worklib.DLY3X4:v (module)
+		worklib.DLY3X1:v (module)
+		worklib.DLY2X4:v (module)
+		worklib.DLY2X1:v (module)
+		worklib.DLY1X4:v (module)
+		worklib.DLY1X1:v (module)
+		worklib.DFFXL:v (module)
+		worklib.DFFX4:v (module)
+		worklib.DFFX2:v (module)
+		worklib.DFFX1:v (module)
+		worklib.DFFTRXL:v (module)
+		worklib.DFFTRX4:v (module)
+		worklib.DFFTRX2:v (module)
+		worklib.DFFTRX1:v (module)
+		worklib.DFFSXL:v (module)
+		worklib.DFFSX4:v (module)
+		worklib.DFFSX2:v (module)
+		worklib.DFFSX1:v (module)
+		worklib.DFFSRXL:v (module)
+		worklib.DFFSRX4:v (module)
+		worklib.DFFSRX2:v (module)
+		worklib.DFFSRX1:v (module)
+		worklib.DFFSRHQX8:v (module)
+		worklib.DFFSRHQX4:v (module)
+		worklib.DFFSRHQX2:v (module)
+		worklib.DFFSRHQX1:v (module)
+		worklib.DFFSHQX8:v (module)
+		worklib.DFFSHQX4:v (module)
+		worklib.DFFSHQX2:v (module)
+		worklib.DFFSHQX1:v (module)
+		worklib.DFFRX4:v (module)
+		worklib.DFFRHQX2:v (module)
+		worklib.DFFQX4:v (module)
+		worklib.DFFQX2:v (module)
+		worklib.DFFQX1:v (module)
+		worklib.DFFNSRXL:v (module)
+		worklib.DFFNSRX4:v (module)
+		worklib.DFFNSRX2:v (module)
+		worklib.DFFNSRX1:v (module)
+		worklib.DFFHQX8:v (module)
+		worklib.DFFHQX4:v (module)
+		worklib.DFFHQX2:v (module)
+		worklib.CLKMX2X8:v (module)
+		worklib.CLKMX2X6:v (module)
+		worklib.CLKMX2X12:v (module)
+		worklib.CLKBUFX8:v (module)
+		worklib.CLKBUFX20:v (module)
+		worklib.CLKAND2X8:v (module)
+		worklib.CLKAND2X12:v (module)
+		worklib.BMXIX4:v (module)
+		worklib.AOI33X4:v (module)
+		worklib.AOI33X2:v (module)
+		worklib.AOI32X4:v (module)
+		worklib.AOI32X2:v (module)
+		worklib.AOI2BB2X4:v (module)
+		worklib.AOI222X4:v (module)
+		worklib.AOI222X2:v (module)
+		worklib.AOI221X4:v (module)
+		worklib.ANTENNA:v (module)
+		worklib.AND4X8:v (module)
+		worklib.AND4X6:v (module)
+		worklib.AND4X2:v (module)
+		worklib.AND3X8:v (module)
+		worklib.AND3X4:v (module)
+		worklib.AND3X2:v (module)
+		worklib.ADDFX4:v (module)
+		worklib.ADDFHX4:v (module)
+		worklib.tb_lstm_network_netlist:v (module)
+            $display("  Total de amostras: %0d", total_samples);
+                                                             |
+xmelab: *W,REALCV (./test_simplified.v,1054|61): Real argument converted to integer for (%d).
+            $display("  Erros Python:      %0d", total_python_errors);
+                                                                   |
+xmelab: *W,REALCV (./test_simplified.v,1055|67): Real argument converted to integer for (%d).
+            $display("  Erros Verilog:     %0d", total_verilog_errors);
+                                                                    |
+xmelab: *W,REALCV (./test_simplified.v,1056|68): Real argument converted to integer for (%d).
+DEFINE std       ./STD
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmvlog_cg: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmsim: *W,DLCPTH (/tools/cadence/XCELIUM2603/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/tools/cadence/XCELIUM2603/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+Loading snapshot worklib.TLATXL:v .................... Done
+xcelium> source /tools/cadence/XCELIUM2603/tools/xcelium/files/xmsimrc
+xcelium> run
+
+LENDO weights.mem
+Li 497 pesos do arquivo
+
+PROCESSANDO ARQUIVO 0: Global Processing/dados_0.mem
+
+LENDO dados de entrada de Global Processing/dados_0.mem
+  Python result: 0x00097bf7 (0.037048)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 0
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.037048
+  Verilog: 0.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 1: Global Processing/dados_1.mem
+
+LENDO dados de entrada de Global Processing/dados_1.mem
+  Python result: 0x00fdee86 (0.991921)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 1
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.991921
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 2: Global Processing/dados_2.mem
+
+LENDO dados de entrada de Global Processing/dados_2.mem
+  Python result: 0x00158ff5 (0.084228)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 2
+  Resultado Verilog: 391394 (Q8.24) = 0.023329
+
+  Python:  0.084228
+  Verilog: 0.023329
+  GT:      0
+
+PROCESSANDO ARQUIVO 3: Global Processing/dados_3.mem
+
+LENDO dados de entrada de Global Processing/dados_3.mem
+  Python result: 0x00fef6b1 (0.995952)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 3
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.995952
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 4: Global Processing/dados_4.mem
+
+LENDO dados de entrada de Global Processing/dados_4.mem
+  Python result: 0x000daeca (0.053448)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 4
+  Resultado Verilog: 6920004 (Q8.24) = 0.412464
+
+  Python:  0.053448
+  Verilog: 0.412464
+  GT:      0
+
+PROCESSANDO ARQUIVO 5: Global Processing/dados_5.mem
+
+LENDO dados de entrada de Global Processing/dados_5.mem
+  Python result: 0x00fe9566 (0.994467)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 5
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.994467
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 6: Global Processing/dados_6.mem
+
+LENDO dados de entrada de Global Processing/dados_6.mem
+  Python result: 0x00fddb28 (0.991625)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 6
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.991625
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 7: Global Processing/dados_7.mem
+
+LENDO dados de entrada de Global Processing/dados_7.mem
+  Python result: 0x009197b0 (0.568721)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 7
+  Resultado Verilog: 9620330 (Q8.24) = 0.573416
+
+  Python:  0.568721
+  Verilog: 0.573416
+  GT:      1
+
+PROCESSANDO ARQUIVO 8: Global Processing/dados_8.mem
+
+LENDO dados de entrada de Global Processing/dados_8.mem
+  Python result: 0x0085f873 (0.523322)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 8
+  Resultado Verilog: 8832781 (Q8.24) = 0.526475
+
+  Python:  0.523322
+  Verilog: 0.526475
+  GT:      0
+
+PROCESSANDO ARQUIVO 9: Global Processing/dados_9.mem
+
+LENDO dados de entrada de Global Processing/dados_9.mem
+  Python result: 0x0048d5a0 (0.284510)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 9
+  Resultado Verilog: 4785435 (Q8.24) = 0.285234
+
+  Python:  0.284510
+  Verilog: 0.285234
+  GT:      0
+
+PROCESSANDO ARQUIVO 10: Global Processing/dados_10.mem
+
+LENDO dados de entrada de Global Processing/dados_10.mem
+  Python result: 0x001ed071 (0.120368)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 10
+  Resultado Verilog: 1705569 (Q8.24) = 0.101660
+
+  Python:  0.120368
+  Verilog: 0.101660
+  GT:      0
+
+PROCESSANDO ARQUIVO 11: Global Processing/dados_11.mem
+
+LENDO dados de entrada de Global Processing/dados_11.mem
+  Python result: 0x00fd96d8 (0.990583)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 11
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.990583
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 12: Global Processing/dados_12.mem
+
+LENDO dados de entrada de Global Processing/dados_12.mem
+  Python result: 0x000bb0f1 (0.045669)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 12
+  Resultado Verilog: 5852286 (Q8.24) = 0.348823
+
+  Python:  0.045669
+  Verilog: 0.348823
+  GT:      0
+
+PROCESSANDO ARQUIVO 13: Global Processing/dados_13.mem
+
+LENDO dados de entrada de Global Processing/dados_13.mem
+  Python result: 0x000a4c51 (0.040227)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 13
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.040227
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 14: Global Processing/dados_14.mem
+
+LENDO dados de entrada de Global Processing/dados_14.mem
+  Python result: 0x0006093f (0.023579)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 14
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.023579
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 15: Global Processing/dados_15.mem
+
+LENDO dados de entrada de Global Processing/dados_15.mem
+  Python result: 0x0035efc0 (0.210690)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 15
+  Resultado Verilog: 3536708 (Q8.24) = 0.210804
+
+  Python:  0.210690
+  Verilog: 0.210804
+  GT:      1
+
+PROCESSANDO ARQUIVO 16: Global Processing/dados_16.mem
+
+LENDO dados de entrada de Global Processing/dados_16.mem
+  Python result: 0x00d3b958 (0.827047)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 16
+  Resultado Verilog: 13964994 (Q8.24) = 0.832379
+
+  Python:  0.827047
+  Verilog: 0.832379
+  GT:      1
+
+PROCESSANDO ARQUIVO 17: Global Processing/dados_17.mem
+
+LENDO dados de entrada de Global Processing/dados_17.mem
+  Python result: 0x00f10185 (0.941429)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 17
+  Resultado Verilog: 10091159 (Q8.24) = 0.601480
+
+  Python:  0.941429
+  Verilog: 0.601480
+  GT:      1
+
+PROCESSANDO ARQUIVO 18: Global Processing/dados_18.mem
+
+LENDO dados de entrada de Global Processing/dados_18.mem
+  Python result: 0x00fd3845 (0.989140)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 18
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.989140
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 19: Global Processing/dados_19.mem
+
+LENDO dados de entrada de Global Processing/dados_19.mem
+  Python result: 0x00d3f60e (0.827973)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 19
+  Resultado Verilog: 14010207 (Q8.24) = 0.835073
+
+  Python:  0.827973
+  Verilog: 0.835073
+  GT:      1
+
+PROCESSANDO ARQUIVO 20: Global Processing/dados_20.mem
+
+LENDO dados de entrada de Global Processing/dados_20.mem
+  Python result: 0x0040fb12 (0.253831)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 20
+  Resultado Verilog: 4261185 (Q8.24) = 0.253986
+
+  Python:  0.253831
+  Verilog: 0.253986
+  GT:      1
+
+PROCESSANDO ARQUIVO 21: Global Processing/dados_21.mem
+
+LENDO dados de entrada de Global Processing/dados_21.mem
+  Python result: 0x00f41f4f (0.953603)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 21
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.953603
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 22: Global Processing/dados_22.mem
+
+LENDO dados de entrada de Global Processing/dados_22.mem
+  Python result: 0x00fbd488 (0.983712)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 22
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.983712
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 23: Global Processing/dados_23.mem
+
+LENDO dados de entrada de Global Processing/dados_23.mem
+  Python result: 0x00953f96 (0.583001)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 23
+  Resultado Verilog: 9791222 (Q8.24) = 0.583602
+
+  Python:  0.583001
+  Verilog: 0.583602
+  GT:      1
+
+PROCESSANDO ARQUIVO 24: Global Processing/dados_24.mem
+
+LENDO dados de entrada de Global Processing/dados_24.mem
+  Python result: 0x007ac684 (0.479592)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 24
+  Resultado Verilog: 8053889 (Q8.24) = 0.480049
+
+  Python:  0.479592
+  Verilog: 0.480049
+  GT:      1
+
+PROCESSANDO ARQUIVO 25: Global Processing/dados_25.mem
+
+LENDO dados de entrada de Global Processing/dados_25.mem
+  Python result: 0x00ee0c1b (0.929872)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 25
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.929872
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 26: Global Processing/dados_26.mem
+
+LENDO dados de entrada de Global Processing/dados_26.mem
+  Python result: 0x00fbe9cc (0.984036)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 26
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.984036
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 27: Global Processing/dados_27.mem
+
+LENDO dados de entrada de Global Processing/dados_27.mem
+  Python result: 0x00ff31a9 (0.996852)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 27
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.996852
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 28: Global Processing/dados_28.mem
+
+LENDO dados de entrada de Global Processing/dados_28.mem
+  Python result: 0x0043404e (0.262700)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 28
+  Resultado Verilog: 4384191 (Q8.24) = 0.261318
+
+  Python:  0.262700
+  Verilog: 0.261318
+  GT:      0
+
+PROCESSANDO ARQUIVO 29: Global Processing/dados_29.mem
+
+LENDO dados de entrada de Global Processing/dados_29.mem
+  Python result: 0x0066ad2c (0.401080)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 29
+  Resultado Verilog: 6758322 (Q8.24) = 0.402827
+
+  Python:  0.401080
+  Verilog: 0.402827
+  GT:      1
+
+PROCESSANDO ARQUIVO 30: Global Processing/dados_30.mem
+
+LENDO dados de entrada de Global Processing/dados_30.mem
+  Python result: 0x0013cd00 (0.077347)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 30
+  Resultado Verilog: 7482 (Q8.24) = 0.000446
+
+  Python:  0.077347
+  Verilog: 0.000446
+  GT:      0
+
+PROCESSANDO ARQUIVO 31: Global Processing/dados_31.mem
+
+LENDO dados de entrada de Global Processing/dados_31.mem
+  Python result: 0x00d7d8be (0.843151)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 31
+  Resultado Verilog: 14288347 (Q8.24) = 0.851652
+
+  Python:  0.843151
+  Verilog: 0.851652
+  GT:      1
+
+PROCESSANDO ARQUIVO 32: Global Processing/dados_32.mem
+
+LENDO dados de entrada de Global Processing/dados_32.mem
+  Python result: 0x008332de (0.512495)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 32
+  Resultado Verilog: 8608290 (Q8.24) = 0.513094
+
+  Python:  0.512495
+  Verilog: 0.513094
+  GT:      0
+
+PROCESSANDO ARQUIVO 33: Global Processing/dados_33.mem
+
+LENDO dados de entrada de Global Processing/dados_33.mem
+  Python result: 0x0006ae67 (0.026099)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 33
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.026099
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 34: Global Processing/dados_34.mem
+
+LENDO dados de entrada de Global Processing/dados_34.mem
+  Python result: 0x00f8f8c0 (0.972546)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 34
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.972546
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 35: Global Processing/dados_35.mem
+
+LENDO dados de entrada de Global Processing/dados_35.mem
+  Python result: 0x00c5df4a (0.772938)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 35
+  Resultado Verilog: 13004074 (Q8.24) = 0.775103
+
+  Python:  0.772938
+  Verilog: 0.775103
+  GT:      0
+
+PROCESSANDO ARQUIVO 36: Global Processing/dados_36.mem
+
+LENDO dados de entrada de Global Processing/dados_36.mem
+  Python result: 0x000780d9 (0.029310)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 36
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.029310
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 37: Global Processing/dados_37.mem
+
+LENDO dados de entrada de Global Processing/dados_37.mem
+  Python result: 0x00164c50 (0.087102)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 37
+  Resultado Verilog: 527823 (Q8.24) = 0.031461
+
+  Python:  0.087102
+  Verilog: 0.031461
+  GT:      0
+
+PROCESSANDO ARQUIVO 38: Global Processing/dados_38.mem
+
+LENDO dados de entrada de Global Processing/dados_38.mem
+  Python result: 0x000af9bc (0.042873)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 38
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.042873
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 39: Global Processing/dados_39.mem
+
+LENDO dados de entrada de Global Processing/dados_39.mem
+  Python result: 0x00115d8e (0.067834)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 39
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.067834
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 40: Global Processing/dados_40.mem
+
+LENDO dados de entrada de Global Processing/dados_40.mem
+  Python result: 0x000a8b6e (0.041190)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 40
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.041190
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 41: Global Processing/dados_41.mem
+
+LENDO dados de entrada de Global Processing/dados_41.mem
+  Python result: 0x00b00550 (0.687581)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 41
+  Resultado Verilog: 11573524 (Q8.24) = 0.689836
+
+  Python:  0.687581
+  Verilog: 0.689836
+  GT:      1
+
+PROCESSANDO ARQUIVO 42: Global Processing/dados_42.mem
+
+LENDO dados de entrada de Global Processing/dados_42.mem
+  Python result: 0x000a46b1 (0.040141)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 42
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.040141
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 43: Global Processing/dados_43.mem
+
+LENDO dados de entrada de Global Processing/dados_43.mem
+  Python result: 0x00131457 (0.074529)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 43
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.074529
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 44: Global Processing/dados_44.mem
+
+LENDO dados de entrada de Global Processing/dados_44.mem
+  Python result: 0x00f85bd7 (0.970151)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 44
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.970151
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 45: Global Processing/dados_45.mem
+
+LENDO dados de entrada de Global Processing/dados_45.mem
+  Python result: 0x00fe8862 (0.994269)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 45
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.994269
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 46: Global Processing/dados_46.mem
+
+LENDO dados de entrada de Global Processing/dados_46.mem
+  Python result: 0x00c3264a (0.762303)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 46
+  Resultado Verilog: 12792129 (Q8.24) = 0.762470
+
+  Python:  0.762303
+  Verilog: 0.762470
+  GT:      1
+
+PROCESSANDO ARQUIVO 47: Global Processing/dados_47.mem
+
+LENDO dados de entrada de Global Processing/dados_47.mem
+  Python result: 0x00fe35e6 (0.993010)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 47
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.993010
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 48: Global Processing/dados_48.mem
+
+LENDO dados de entrada de Global Processing/dados_48.mem
+  Python result: 0x00fe9e2c (0.994601)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 48
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.994601
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 49: Global Processing/dados_49.mem
+
+LENDO dados de entrada de Global Processing/dados_49.mem
+  Python result: 0x004d01dc (0.300810)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 49
+  Resultado Verilog: 5606644 (Q8.24) = 0.334182
+
+  Python:  0.300810
+  Verilog: 0.334182
+  GT:      1
+
+PROCESSANDO ARQUIVO 50: Global Processing/dados_50.mem
+
+LENDO dados de entrada de Global Processing/dados_50.mem
+  Python result: 0x002a66ca (0.165631)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 50
+  Resultado Verilog: 2684408 (Q8.24) = 0.160003
+
+  Python:  0.165631
+  Verilog: 0.160003
+  GT:      0
+
+PROCESSANDO ARQUIVO 51: Global Processing/dados_51.mem
+
+LENDO dados de entrada de Global Processing/dados_51.mem
+  Python result: 0x00ff577f (0.997429)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 51
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.997429
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 52: Global Processing/dados_52.mem
+
+LENDO dados de entrada de Global Processing/dados_52.mem
+  Python result: 0x00209790 (0.127313)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 52
+  Resultado Verilog: 1857309 (Q8.24) = 0.110704
+
+  Python:  0.127313
+  Verilog: 0.110704
+  GT:      0
+
+PROCESSANDO ARQUIVO 53: Global Processing/dados_53.mem
+
+LENDO dados de entrada de Global Processing/dados_53.mem
+  Python result: 0x00e9f5ce (0.913907)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 53
+  Resultado Verilog: 16558322 (Q8.24) = 0.986953
+
+  Python:  0.913907
+  Verilog: 0.986953
+  GT:      1
+
+PROCESSANDO ARQUIVO 54: Global Processing/dados_54.mem
+
+LENDO dados de entrada de Global Processing/dados_54.mem
+  Python result: 0x00330a01 (0.199371)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 54
+  Resultado Verilog: 3253766 (Q8.24) = 0.193940
+
+  Python:  0.199371
+  Verilog: 0.193940
+  GT:      0
+
+PROCESSANDO ARQUIVO 55: Global Processing/dados_55.mem
+
+LENDO dados de entrada de Global Processing/dados_55.mem
+  Python result: 0x00fda564 (0.990805)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 55
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.990805
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 56: Global Processing/dados_56.mem
+
+LENDO dados de entrada de Global Processing/dados_56.mem
+  Python result: 0x000ba626 (0.045504)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 56
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.045504
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 57: Global Processing/dados_57.mem
+
+LENDO dados de entrada de Global Processing/dados_57.mem
+  Python result: 0x00edd63f (0.929050)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 57
+  Resultado Verilog: 8584537 (Q8.24) = 0.511678
+
+  Python:  0.929050
+  Verilog: 0.511678
+  GT:      1
+
+PROCESSANDO ARQUIVO 58: Global Processing/dados_58.mem
+
+LENDO dados de entrada de Global Processing/dados_58.mem
+  Python result: 0x00d9af20 (0.850328)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 58
+  Resultado Verilog: 14416120 (Q8.24) = 0.859268
+
+  Python:  0.850328
+  Verilog: 0.859268
+  GT:      0
+
+PROCESSANDO ARQUIVO 59: Global Processing/dados_59.mem
+
+LENDO dados de entrada de Global Processing/dados_59.mem
+  Python result: 0x000c7398 (0.048639)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 59
+  Resultado Verilog: 5905007 (Q8.24) = 0.351966
+
+  Python:  0.048639
+  Verilog: 0.351966
+  GT:      0
+
+PROCESSANDO ARQUIVO 60: Global Processing/dados_60.mem
+
+LENDO dados de entrada de Global Processing/dados_60.mem
+  Python result: 0x0007b906 (0.030167)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 60
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.030167
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 61: Global Processing/dados_61.mem
+
+LENDO dados de entrada de Global Processing/dados_61.mem
+  Python result: 0x007a8946 (0.478657)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 61
+  Resultado Verilog: 8031302 (Q8.24) = 0.478703
+
+  Python:  0.478657
+  Verilog: 0.478703
+  GT:      0
+
+PROCESSANDO ARQUIVO 62: Global Processing/dados_62.mem
+
+LENDO dados de entrada de Global Processing/dados_62.mem
+  Python result: 0x000bd5c7 (0.046231)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 62
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.046231
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 63: Global Processing/dados_63.mem
+
+LENDO dados de entrada de Global Processing/dados_63.mem
+  Python result: 0x00d8607d (0.845222)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 63
+  Resultado Verilog: 14377174 (Q8.24) = 0.856946
+
+  Python:  0.845222
+  Verilog: 0.856946
+  GT:      0
+
+PROCESSANDO ARQUIVO 64: Global Processing/dados_64.mem
+
+LENDO dados de entrada de Global Processing/dados_64.mem
+  Python result: 0x00f127be (0.942013)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 64
+  Resultado Verilog: 9714366 (Q8.24) = 0.579021
+
+  Python:  0.942013
+  Verilog: 0.579021
+  GT:      1
+
+PROCESSANDO ARQUIVO 65: Global Processing/dados_65.mem
+
+LENDO dados de entrada de Global Processing/dados_65.mem
+  Python result: 0x002010bc (0.125255)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 65
+  Resultado Verilog: 1828322 (Q8.24) = 0.108976
+
+  Python:  0.125255
+  Verilog: 0.108976
+  GT:      1
+
+PROCESSANDO ARQUIVO 66: Global Processing/dados_66.mem
+
+LENDO dados de entrada de Global Processing/dados_66.mem
+  Python result: 0x000b5d14 (0.044389)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 66
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.044389
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 67: Global Processing/dados_67.mem
+
+LENDO dados de entrada de Global Processing/dados_67.mem
+  Python result: 0x00391a29 (0.223055)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 67
+  Resultado Verilog: 3674285 (Q8.24) = 0.219004
+
+  Python:  0.223055
+  Verilog: 0.219004
+  GT:      0
+
+PROCESSANDO ARQUIVO 68: Global Processing/dados_68.mem
+
+LENDO dados de entrada de Global Processing/dados_68.mem
+  Python result: 0x00170458 (0.089910)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 68
+  Resultado Verilog: 673882 (Q8.24) = 0.040166
+
+  Python:  0.089910
+  Verilog: 0.040166
+  GT:      0
+
+PROCESSANDO ARQUIVO 69: Global Processing/dados_69.mem
+
+LENDO dados de entrada de Global Processing/dados_69.mem
+  Python result: 0x00e6dea9 (0.901835)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 69
+  Resultado Verilog: 15840466 (Q8.24) = 0.944165
+
+  Python:  0.901835
+  Verilog: 0.944165
+  GT:      0
+
+PROCESSANDO ARQUIVO 70: Global Processing/dados_70.mem
+
+LENDO dados de entrada de Global Processing/dados_70.mem
+  Python result: 0x0010bf61 (0.065420)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 70
+  Resultado Verilog: 8115357 (Q8.24) = 0.483713
+
+  Python:  0.065420
+  Verilog: 0.483713
+  GT:      0
+
+PROCESSANDO ARQUIVO 71: Global Processing/dados_71.mem
+
+LENDO dados de entrada de Global Processing/dados_71.mem
+  Python result: 0x000e9ac8 (0.057049)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 71
+  Resultado Verilog: 7111035 (Q8.24) = 0.423851
+
+  Python:  0.057049
+  Verilog: 0.423851
+  GT:      0
+
+PROCESSANDO ARQUIVO 72: Global Processing/dados_72.mem
+
+LENDO dados de entrada de Global Processing/dados_72.mem
+  Python result: 0x003fce5b (0.249242)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 72
+  Resultado Verilog: 4234229 (Q8.24) = 0.252380
+
+  Python:  0.249242
+  Verilog: 0.252380
+  GT:      0
+
+PROCESSANDO ARQUIVO 73: Global Processing/dados_73.mem
+
+LENDO dados de entrada de Global Processing/dados_73.mem
+  Python result: 0x0033f4d4 (0.202955)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 73
+  Resultado Verilog: 3355920 (Q8.24) = 0.200028
+
+  Python:  0.202955
+  Verilog: 0.200028
+  GT:      0
+
+PROCESSANDO ARQUIVO 74: Global Processing/dados_74.mem
+
+LENDO dados de entrada de Global Processing/dados_74.mem
+  Python result: 0x00fdf9bf (0.992092)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 74
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.992092
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 75: Global Processing/dados_75.mem
+
+LENDO dados de entrada de Global Processing/dados_75.mem
+  Python result: 0x00db7d5a (0.857381)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 75
+  Resultado Verilog: 14588465 (Q8.24) = 0.869540
+
+  Python:  0.857381
+  Verilog: 0.869540
+  GT:      1
+
+PROCESSANDO ARQUIVO 76: Global Processing/dados_76.mem
+
+LENDO dados de entrada de Global Processing/dados_76.mem
+  Python result: 0x000eca21 (0.057772)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 76
+  Resultado Verilog: 7484213 (Q8.24) = 0.446094
+
+  Python:  0.057772
+  Verilog: 0.446094
+  GT:      0
+
+PROCESSANDO ARQUIVO 77: Global Processing/dados_77.mem
+
+LENDO dados de entrada de Global Processing/dados_77.mem
+  Python result: 0x00f4a643 (0.955662)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 77
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.955662
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 78: Global Processing/dados_78.mem
+
+LENDO dados de entrada de Global Processing/dados_78.mem
+  Python result: 0x00147206 (0.079865)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 78
+  Resultado Verilog: 173898 (Q8.24) = 0.010365
+
+  Python:  0.079865
+  Verilog: 0.010365
+  GT:      0
+
+PROCESSANDO ARQUIVO 79: Global Processing/dados_79.mem
+
+LENDO dados de entrada de Global Processing/dados_79.mem
+  Python result: 0x00210a39 (0.129062)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 79
+  Resultado Verilog: 1921067 (Q8.24) = 0.114505
+
+  Python:  0.129062
+  Verilog: 0.114505
+  GT:      0
+
+PROCESSANDO ARQUIVO 80: Global Processing/dados_80.mem
+
+LENDO dados de entrada de Global Processing/dados_80.mem
+  Python result: 0x000ed33e (0.057911)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 80
+  Resultado Verilog: 7318097 (Q8.24) = 0.436193
+
+  Python:  0.057911
+  Verilog: 0.436193
+  GT:      0
+
+PROCESSANDO ARQUIVO 81: Global Processing/dados_81.mem
+
+LENDO dados de entrada de Global Processing/dados_81.mem
+  Python result: 0x00080f6c (0.031485)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 81
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.031485
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 82: Global Processing/dados_82.mem
+
+LENDO dados de entrada de Global Processing/dados_82.mem
+  Python result: 0x00f87535 (0.970538)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 82
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.970538
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 83: Global Processing/dados_83.mem
+
+LENDO dados de entrada de Global Processing/dados_83.mem
+  Python result: 0x00fd4807 (0.989380)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 83
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.989380
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 84: Global Processing/dados_84.mem
+
+LENDO dados de entrada de Global Processing/dados_84.mem
+  Python result: 0x00f63e28 (0.961886)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 84
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.961886
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 85: Global Processing/dados_85.mem
+
+LENDO dados de entrada de Global Processing/dados_85.mem
+  Python result: 0x00e7b640 (0.905125)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 85
+  Resultado Verilog: 15893765 (Q8.24) = 0.947342
+
+  Python:  0.905125
+  Verilog: 0.947342
+  GT:      0
+
+PROCESSANDO ARQUIVO 86: Global Processing/dados_86.mem
+
+LENDO dados de entrada de Global Processing/dados_86.mem
+  Python result: 0x00ff180f (0.996461)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 86
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.996461
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 87: Global Processing/dados_87.mem
+
+LENDO dados de entrada de Global Processing/dados_87.mem
+  Python result: 0x00fcf96c (0.988181)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 87
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.988181
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 88: Global Processing/dados_88.mem
+
+LENDO dados de entrada de Global Processing/dados_88.mem
+  Python result: 0x00f897d2 (0.971067)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 88
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.971067
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 89: Global Processing/dados_89.mem
+
+LENDO dados de entrada de Global Processing/dados_89.mem
+  Python result: 0x008365b0 (0.513270)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 89
+  Resultado Verilog: 8607726 (Q8.24) = 0.513060
+
+  Python:  0.513270
+  Verilog: 0.513060
+  GT:      1
+
+PROCESSANDO ARQUIVO 90: Global Processing/dados_90.mem
+
+LENDO dados de entrada de Global Processing/dados_90.mem
+  Python result: 0x000b8a0d (0.045075)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 90
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.045075
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 91: Global Processing/dados_91.mem
+
+LENDO dados de entrada de Global Processing/dados_91.mem
+  Python result: 0x00272e38 (0.153049)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 91
+  Resultado Verilog: 2442824 (Q8.24) = 0.145604
+
+  Python:  0.153049
+  Verilog: 0.145604
+  GT:      0
+
+PROCESSANDO ARQUIVO 92: Global Processing/dados_92.mem
+
+LENDO dados de entrada de Global Processing/dados_92.mem
+  Python result: 0x00c44a80 (0.766762)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 92
+  Resultado Verilog: 12878635 (Q8.24) = 0.767626
+
+  Python:  0.766762
+  Verilog: 0.767626
+  GT:      0
+
+PROCESSANDO ARQUIVO 93: Global Processing/dados_93.mem
+
+LENDO dados de entrada de Global Processing/dados_93.mem
+  Python result: 0x00155f92 (0.083490)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 93
+  Resultado Verilog: 300232 (Q8.24) = 0.017895
+
+  Python:  0.083490
+  Verilog: 0.017895
+  GT:      0
+
+PROCESSANDO ARQUIVO 94: Global Processing/dados_94.mem
+
+LENDO dados de entrada de Global Processing/dados_94.mem
+  Python result: 0x001eb602 (0.119965)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 94
+  Resultado Verilog: 1706361 (Q8.24) = 0.101707
+
+  Python:  0.119965
+  Verilog: 0.101707
+  GT:      1
+
+PROCESSANDO ARQUIVO 95: Global Processing/dados_95.mem
+
+LENDO dados de entrada de Global Processing/dados_95.mem
+  Python result: 0x00fe7eaa (0.994120)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 95
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.994120
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 96: Global Processing/dados_96.mem
+
+LENDO dados de entrada de Global Processing/dados_96.mem
+  Python result: 0x00fe3b12 (0.993089)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 96
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.993089
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 97: Global Processing/dados_97.mem
+
+LENDO dados de entrada de Global Processing/dados_97.mem
+  Python result: 0x00f42484 (0.953682)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 97
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.953682
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 98: Global Processing/dados_98.mem
+
+LENDO dados de entrada de Global Processing/dados_98.mem
+  Python result: 0x00fa2d55 (0.977254)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 98
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.977254
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 99: Global Processing/dados_99.mem
+
+LENDO dados de entrada de Global Processing/dados_99.mem
+  Python result: 0x00e7d936 (0.905658)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 99
+  Resultado Verilog: 15893526 (Q8.24) = 0.947328
+
+  Python:  0.905658
+  Verilog: 0.947328
+  GT:      1
+
+PROCESSANDO ARQUIVO 100: Global Processing/dados_100.mem
+
+LENDO dados de entrada de Global Processing/dados_100.mem
+  Python result: 0x009a8b48 (0.603688)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 100
+  Resultado Verilog: 10146825 (Q8.24) = 0.604798
+
+  Python:  0.603688
+  Verilog: 0.604798
+  GT:      1
+
+PROCESSANDO ARQUIVO 101: Global Processing/dados_101.mem
+
+LENDO dados de entrada de Global Processing/dados_101.mem
+  Python result: 0x0005a36a (0.022025)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 101
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.022025
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 102: Global Processing/dados_102.mem
+
+LENDO dados de entrada de Global Processing/dados_102.mem
+  Python result: 0x0008ff5e (0.035147)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 102
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.035147
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 103: Global Processing/dados_103.mem
+
+LENDO dados de entrada de Global Processing/dados_103.mem
+  Python result: 0x00fef2d0 (0.995893)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 103
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.995893
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 104: Global Processing/dados_104.mem
+
+LENDO dados de entrada de Global Processing/dados_104.mem
+  Python result: 0x000e4ba9 (0.055842)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 104
+  Resultado Verilog: 7213850 (Q8.24) = 0.429979
+
+  Python:  0.055842
+  Verilog: 0.429979
+  GT:      0
+
+PROCESSANDO ARQUIVO 105: Global Processing/dados_105.mem
+
+LENDO dados de entrada de Global Processing/dados_105.mem
+  Python result: 0x00e59589 (0.896813)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 105
+  Resultado Verilog: 15658820 (Q8.24) = 0.933338
+
+  Python:  0.896813
+  Verilog: 0.933338
+  GT:      1
+
+PROCESSANDO ARQUIVO 106: Global Processing/dados_106.mem
+
+LENDO dados de entrada de Global Processing/dados_106.mem
+  Python result: 0x000ef3c5 (0.058407)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 106
+  Resultado Verilog: 7265277 (Q8.24) = 0.433044
+
+  Python:  0.058407
+  Verilog: 0.433044
+  GT:      0
+
+PROCESSANDO ARQUIVO 107: Global Processing/dados_107.mem
+
+LENDO dados de entrada de Global Processing/dados_107.mem
+  Python result: 0x001257cc (0.071652)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 107
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.071652
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 108: Global Processing/dados_108.mem
+
+LENDO dados de entrada de Global Processing/dados_108.mem
+  Python result: 0x00ff0739 (0.996204)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 108
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.996204
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 109: Global Processing/dados_109.mem
+
+LENDO dados de entrada de Global Processing/dados_109.mem
+  Python result: 0x0022891f (0.134905)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 109
+  Resultado Verilog: 2066817 (Q8.24) = 0.123192
+
+  Python:  0.134905
+  Verilog: 0.123192
+  GT:      0
+
+PROCESSANDO ARQUIVO 110: Global Processing/dados_110.mem
+
+LENDO dados de entrada de Global Processing/dados_110.mem
+  Python result: 0x00c96544 (0.786701)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 110
+  Resultado Verilog: 13198253 (Q8.24) = 0.786677
+
+  Python:  0.786701
+  Verilog: 0.786677
+  GT:      0
+
+PROCESSANDO ARQUIVO 111: Global Processing/dados_111.mem
+
+LENDO dados de entrada de Global Processing/dados_111.mem
+  Python result: 0x0007245d (0.027899)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 111
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.027899
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 112: Global Processing/dados_112.mem
+
+LENDO dados de entrada de Global Processing/dados_112.mem
+  Python result: 0x0008fd7a (0.035118)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 112
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.035118
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 113: Global Processing/dados_113.mem
+
+LENDO dados de entrada de Global Processing/dados_113.mem
+  Python result: 0x000a3115 (0.039811)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 113
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.039811
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 114: Global Processing/dados_114.mem
+
+LENDO dados de entrada de Global Processing/dados_114.mem
+  Python result: 0x001b7e42 (0.107395)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 114
+  Resultado Verilog: 1316831 (Q8.24) = 0.078489
+
+  Python:  0.107395
+  Verilog: 0.078489
+  GT:      0
+
+PROCESSANDO ARQUIVO 115: Global Processing/dados_115.mem
+
+LENDO dados de entrada de Global Processing/dados_115.mem
+  Python result: 0x004efda4 (0.308558)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 115
+  Resultado Verilog: 5172796 (Q8.24) = 0.308323
+
+  Python:  0.308558
+  Verilog: 0.308323
+  GT:      0
+
+PROCESSANDO ARQUIVO 116: Global Processing/dados_116.mem
+
+LENDO dados de entrada de Global Processing/dados_116.mem
+  Python result: 0x00e7772b (0.904162)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 116
+  Resultado Verilog: 15947432 (Q8.24) = 0.950541
+
+  Python:  0.904162
+  Verilog: 0.950541
+  GT:      1
+
+PROCESSANDO ARQUIVO 117: Global Processing/dados_117.mem
+
+LENDO dados de entrada de Global Processing/dados_117.mem
+  Python result: 0x00ecca9e (0.924967)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 117
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.924967
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 118: Global Processing/dados_118.mem
+
+LENDO dados de entrada de Global Processing/dados_118.mem
+  Python result: 0x00fe389c (0.993051)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 118
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.993051
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 119: Global Processing/dados_119.mem
+
+LENDO dados de entrada de Global Processing/dados_119.mem
+  Python result: 0x00ff0dd5 (0.996305)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 119
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.996305
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 120: Global Processing/dados_120.mem
+
+LENDO dados de entrada de Global Processing/dados_120.mem
+  Python result: 0x000f2fd2 (0.059323)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 120
+  Resultado Verilog: 7426877 (Q8.24) = 0.442676
+
+  Python:  0.059323
+  Verilog: 0.442676
+  GT:      0
+
+PROCESSANDO ARQUIVO 121: Global Processing/dados_121.mem
+
+LENDO dados de entrada de Global Processing/dados_121.mem
+  Python result: 0x00ff0250 (0.996129)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 121
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.996129
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 122: Global Processing/dados_122.mem
+
+LENDO dados de entrada de Global Processing/dados_122.mem
+  Python result: 0x00f23a38 (0.946201)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 122
+  Resultado Verilog: 10353249 (Q8.24) = 0.617102
+
+  Python:  0.946201
+  Verilog: 0.617102
+  GT:      1
+
+PROCESSANDO ARQUIVO 123: Global Processing/dados_123.mem
+
+LENDO dados de entrada de Global Processing/dados_123.mem
+  Python result: 0x00fda018 (0.990724)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 123
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.990724
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 124: Global Processing/dados_124.mem
+
+LENDO dados de entrada de Global Processing/dados_124.mem
+  Python result: 0x003abab0 (0.229411)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 124
+  Resultado Verilog: 3837332 (Q8.24) = 0.228723
+
+  Python:  0.229411
+  Verilog: 0.228723
+  GT:      0
+
+PROCESSANDO ARQUIVO 125: Global Processing/dados_125.mem
+
+LENDO dados de entrada de Global Processing/dados_125.mem
+  Python result: 0x00b9aaa2 (0.725260)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 125
+  Resultado Verilog: 12159069 (Q8.24) = 0.724737
+
+  Python:  0.725260
+  Verilog: 0.724737
+  GT:      1
+
+PROCESSANDO ARQUIVO 126: Global Processing/dados_126.mem
+
+LENDO dados de entrada de Global Processing/dados_126.mem
+  Python result: 0x00fa9fb8 (0.979000)
+  Ground truth: 1
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 126
+  Resultado Verilog: 16777216 (Q8.24) = 1.000000
+
+  Python:  0.979000
+  Verilog: 1.000000
+  GT:      1
+
+PROCESSANDO ARQUIVO 127: Global Processing/dados_127.mem
+
+LENDO dados de entrada de Global Processing/dados_127.mem
+  Python result: 0x00128c94 (0.072458)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 127
+  Resultado Verilog: 0 (Q8.24) = 0.000000
+
+  Python:  0.072458
+  Verilog: 0.000000
+  GT:      0
+
+PROCESSANDO ARQUIVO 128: Global Processing/dados_128.mem
+
+LENDO dados de entrada de Global Processing/dados_128.mem
+  Python result: 0x001f2c06 (0.121765)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 128
+  Resultado Verilog: 1715130 (Q8.24) = 0.102230
+
+  Python:  0.121765
+  Verilog: 0.102230
+  GT:      0
+
+PROCESSANDO ARQUIVO 129: Global Processing/dados_129.mem
+
+LENDO dados de entrada de Global Processing/dados_129.mem
+  Python result: 0x000ff5fa (0.062347)
+  Ground truth: 0
+Li 480 valores de entrada (esperado: 480)
+
+ESCREVENDO PESOS NO DUT
+Escritos 497 pesos
+EXECUTANDO LSTM NETWORK para arquivo 129
+Simulation interrupted at 2108945 NS + 1
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun	26.03-s005: Exiting on Oct 09, 2026 at 18:46:09 -03  (total: 22:21:38)

@@ -1,0 +1,16 @@
+s1(23Sep2026:19:52:04):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s2(23Sep2026:19:55:56):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s3(23Sep2026:19:56:15):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s4(23Sep2026:20:01:23):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s5(23Sep2026:20:03:42):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+s6(23Sep2026:20:07:11):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplest.v 
+#e7(08Oct2026:19:37:32): source ./xcelium.d/env.d/env.history.08Oct2026_19_37_32
+s7(08Oct2026:19:37:32):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplified.v 
+#e8(08Oct2026:19:38:02): source ./xcelium.d/env.d/env.history.08Oct2026_19_38_02
+s8(08Oct2026:19:38:02):  xrun -Q -unbuffered -timescale 1ns/1ns -sysv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplified.v 
+#e9(08Oct2026:19:42:26): source ./xcelium.d/env.d/env.history.08Oct2026_19_42_26
+s9(08Oct2026:19:42:26):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplest.v test_simplified.v 
+#e10(08Oct2026:19:42:58): source ./xcelium.d/env.d/env.history.08Oct2026_19_42_58
+s10(08Oct2026:19:42:58):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplified.v 
+#e11(08Oct2026:20:24:31): source ./xcelium.d/env.d/env.history.08Oct2026_20_24_31
+s11(08Oct2026:20:24:31):  xrun -Q -unbuffered -timescale 1ns/1ns -sv -access +rw slow_vdd1v0_basiccells.v lstm_simplified.v test_simplified.v 
