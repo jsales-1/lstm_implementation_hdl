@@ -258,3 +258,25 @@ Em potência, o Simplified consome aproximadamente 453,4 mW, cerca de três veze
 <p align="justify">
 De forma geral, os resultados de síntese mostram que a implementação é viável em 100 MHz para os dois modelos, com o Simplified mantendo a mesma frequência do Simplest apesar do aumento expressivo de complexidade. O custo desse crescimento aparece principalmente em área e potência, que escalam de forma aproximadamente proporcional ao número de neurônios e ao número de timesteps, enquanto o timing permanece estável porque o caminho crítico está confinado à estrutura interna de um único neurônio. Essa característica é relevante para o projeto, porque indica que otimizações de timing devem focar na profundidade lógica do neurônio, e não no tamanho da rede, enquanto otimizações de área e potência podem se beneficiar de técnicas como compartilhamento de multiplicadores, redução de precisão ou clock gating.
 </p>
+
+<h2>Gate Level Simulation (GLS)</h2>
+
+<p align="justify">
+Após a síntese, foi realizada a simulação em nível de porta (Gate Level Simulation, GLS) para validar a netlist gerada contra o comportamento do RTL original. Os arquivos de GLS estão organizados no diretório <code>Synthesis/Gate Level Simulation/</code>, que contém duas subpastas, <code>simplest/</code> e <code>simplified/</code>, correspondentes aos dois modelos explorados. A simulação foi conduzida com a netlist sintetizada pelo Cadence Genus e os mesmos estímulos utilizados na verificação funcional em SystemVerilog, permitindo comparar diretamente a saída do hardware em nível de porta com a saída do RTL.
+</p>
+
+<p align="justify">
+Para o modelo <b>Simplest</b>, o GLS foi realizado de forma completa, com os 10.000 exemplos de teste, e os resultados obtidos foram idênticos aos do modelo em SystemVerilog. Isso confirma que a síntese preservou a funcionalidade do RTL, apesar do aumento expressivo no número de células e da introdução de atrasos de propagação inerentes à netlist. O gráfico abaixo relaciona as saídas do Verilog (eixo X) e do SystemVerilog (eixo Y) para o modelo Simplest, mostrando a correspondência exata entre as duas implementações:
+</p>
+
+<p align="center">
+<img src="./Comparing%20Python%20and%20SystemVerilog/Q8_24/comparacao_modelo_simplest_gls_sv.png" alt="GLS Simplest: SystemVerilog vs Verilog" width="700">
+</p>
+
+<p align="justify">
+A linha tracejada vermelha representa a correspondência perfeita (y = x) e o coeficiente de determinação obtido foi <b>R² = 1,000000</b>, valor que indica que o hardware em nível de porta reproduz exatamente o comportamento do RTL. Esse resultado valida a etapa de síntese do modelo Simplest e confirma que a netlist gerada é funcionalmente equivalente ao design original.
+</p>
+
+<p align="justify">
+Para o modelo <b>Simplified</b>, não foi possível realizar o teste completo com os 10.000 exemplos, porque a simulação em nível de porta se tornou proibitiva em tempo de execução devido ao grande número de células da netlist, que ultrapassa 2,7 milhões de instâncias. Ainda assim, os exemplos que foram testados apresentaram resultados consistentes com o RTL, indicando que a síntese também preservou a funcionalidade do modelo Simplified. Essa limitação é esperada em projetos de maior porte e não compromete a validação da etapa de síntese, já que os testes parciais cobriram uma variedade representativa de amostras.
+</p>
