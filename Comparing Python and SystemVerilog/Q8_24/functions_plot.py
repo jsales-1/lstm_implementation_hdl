@@ -15,7 +15,7 @@ def plot_histograms(
     filename
 ):
     """
-    Plota os histogramas das saídas Verilog e Python.
+    Plota os histogramas das saídas SystemVerilog e Python.
     """
 
     fig, ax = plt.subplots(
@@ -25,7 +25,7 @@ def plot_histograms(
     )
 
     fig.suptitle(
-        f"Comparação entre saídas da rede neural em Python e Verilog\n"
+        f"Comparação entre saídas da rede neural em Python e SystemVerilog\n"
         f"{architecture}",
         fontsize=16
     )
@@ -35,7 +35,7 @@ def plot_histograms(
         bins=50,
         edgecolor='black'
     )
-    ax[0].set_title("Verilog")
+    ax[0].set_title("SystemVerilog")
     ax[0].set_ylabel("Frequência")
 
     ax[1].hist(
@@ -83,10 +83,10 @@ def plot_r2(
     )
 
     plt.xlabel("Python")
-    plt.ylabel("Verilog")
+    plt.ylabel("SystemVerilog")
 
     plt.title(
-        f"Python vs Verilog (R² = {r2:.6f})\n"
+        f"Python vs SystemVerilog (R² = {r2:.6f})\n"
         f"{architecture}"
     )
 
@@ -138,7 +138,7 @@ def plot_confusion_matrix(
         python_pred
     )
 
-    print(f"Acurácia Verilog: {acc_verilog:.4f}")
+    print(f"Acurácia SystemVerilog: {acc_verilog:.4f}")
     print(f"Acurácia Python : {acc_python:.4f}")
 
     # Plot
@@ -149,7 +149,7 @@ def plot_confusion_matrix(
 
     fig.suptitle(
         f"Comparação entre matriz de confusão da rede neural "
-        f"em Python e Verilog\n{architecture}",
+        f"em Python e SystemVerilog\n{architecture}",
         fontsize=16
     )
 
@@ -165,7 +165,7 @@ def plot_confusion_matrix(
     )
 
     ax[0].set_title(
-        f"Verilog\nAccuracy = {acc_verilog:.4f}"
+        f"SystemVerilog\nAccuracy = {acc_verilog:.4f}"
     )
     ax[0].set_xlabel("Predito")
     ax[0].set_ylabel("Positive")
